@@ -53,8 +53,19 @@ We can also see that there are files inside these folders with `.sol` extentions
  
 
 
-Now lets go ahead and create a new file `MyHelloWorld.sol` in the `/src` folder and paste our contract code . Note that the name does not matter. You can name it anything.
+Now lets go ahead and create a new file `MyHelloWorld.sol` in the `/src` folder and type the contract code  . Note that the name does not matter. You can name it anything.
 
 ![alt text](image-1.png)
+
+
+To compile the code we run the following command :
+
+```bash
+forge build  
+```
+
+![alt text](image-2.png)
+
+
 
 
