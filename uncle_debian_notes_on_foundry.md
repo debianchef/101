@@ -101,8 +101,6 @@ To compile the code we run the following command :
 forge build  
 ```
 
-![alt text](image-2.png)
-
 
 
 # Testing
@@ -175,7 +173,7 @@ forge test --match-contract MyHelloWorldTest --match-test test_helloWorld_functi
 to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` contract and display output.
 
 
-The test should pass wihout any issues 
+The test should pass without any issues 
 
 ![alt text](image-3.png)
 
