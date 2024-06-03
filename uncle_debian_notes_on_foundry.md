@@ -3,6 +3,16 @@
 To get started, we will learn solidity as a language.
 Let’s create a hello world using foundry.
 
+```solidity
+
+contract MyHelloWorldContract {
+
+	function helloWorld() public pure returns (uint256) {
+		return 100;
+	}
+}
+```
+
 First we need to make sure  we have foundry installed .
 
 Open your terminal and run the following command:
@@ -16,25 +26,26 @@ curl -L https://foundry.paradigm.xyz | bash
 
 This will install Foundryup, then simply follow the instructions on-screen, which will make the foundryup command available in your CLI
 
-After installation , create a new directory where we will be creating our `MyHelloWorldContract`. 
+After installation , run the following command to create , navigate to MyfirstContract directory and initialize the foundry project to develop our contract.
 
 ```bash
 mkdir MyfirstContract && cd MyfirstContract && forge init --no-commit
 ```
 
-This one liner command will create , navigate to MyfirstContract directory and initialize the foundry project to develop our contract 
+
 
 Your Project Directory should look like this .
+
 ![alt text](image.png)
 
 
+We can see that some starter files has been downloaded in our workspace. Lets walkthrough : 
 
-```solidity
+The `lib` folder is where all  downloaded libraries or dependancies  will be placed. 
+The  `script` folder is where we will be writing our deploy script.
+The `src` folder is where we will be writing our contract (main project dir)
+The `test` folder is where we will be writing test for all the contracts.
 
-contract MyHelloWorldContract {
 
-	function helloWorld() public pure returns (uint256) {
-		return 100;
-	}
-}
-```
+We can also wee that there are files inside these folders with .sol. These files are solidity files
+ 
