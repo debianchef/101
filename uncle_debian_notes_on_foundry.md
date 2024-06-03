@@ -1,5 +1,5 @@
 # Development 
-This article assumes the reader is familar with Solidity programing Language [Solidity Programing Language](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_basic_solidity.md) .
+This article assumes the reader is familar with [Solidity Programing Language](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_basic_solidity.md) .
 
 
 #### Setup your Environment
