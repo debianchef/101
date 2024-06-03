@@ -87,6 +87,7 @@ Assuuming we want to import our MyfirstContract contract
 import {MyHelloWorldContract} from "../src/MyHelloWorld.sol";
 ```
 
+Our project directory and contract should look like this 
 
 ![alt text](image-1.png)
 
@@ -152,7 +153,7 @@ This  will  search inside your project  for a test function called `test_helloWo
 
 ---
 >[!IMPORTANT]
-> Remember to add `test` before your function name. This is because contract with a function that starts with test is considered to be a test.
+> Remember to add `test` before your function name. This is because in foundry, contract with a function that starts with test is considered to be a test.
 --- 
 
 In the our case  we added `test` to `_helloWorld_function`  .
