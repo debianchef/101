@@ -19,10 +19,10 @@ Open your terminal and run the following command:
 ```bash
 curl -L https://foundry.paradigm.xyz | bash
 ```
-
+---
 >[!NOTE]
 > If you’re on Windows, you will need to install and use Git BASH or WSL, as your terminal
-
+---
 
 This will install Foundryup, then simply follow the instructions on-screen, which will make the foundryup command available in your CLI
 
@@ -34,7 +34,7 @@ forge init MyfirstContract --no-commit
 ---
 >[!NOTE]
 >Forge is a command-line tool that ships with Foundry. Forge  tests, builds, and deploys your smart contracts
-
+---
 
 Your Project Directory should look like this .
 
@@ -133,6 +133,7 @@ assertEq(number , result);
 ---
 >[!NOTE]
 >You noitced that the test contract  ends with .t.sol
+---
 
 Now  copy or type the code in the new file created in the `/test` folder and run the command :
 
