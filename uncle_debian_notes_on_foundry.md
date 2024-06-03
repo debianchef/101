@@ -16,12 +16,19 @@ curl -L https://foundry.paradigm.xyz | bash
 
 This will install Foundryup, then simply follow the instructions on-screen, which will make the foundryup command available in your CLI
 
+After installation , create a new directory where we will be creating our `MyHelloWorldContract`. 
+
+```bash
+mkdir MyfirstContract && cd MyfirstContract && forge init --no-commit
+```
+
+This one liner command will create , navigate to MyfirstContract directory and initialize the foundry project to develop our contract 
+
+Your Project Directory should look like this .
+![alt text](image.png)
 
 
 
-
-
-​
 ```solidity
 
 contract MyHelloWorldContract {
