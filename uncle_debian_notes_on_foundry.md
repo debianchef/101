@@ -1,8 +1,8 @@
 # Development 
+This article assumes the reader is familar with Solidity programing Language 
 
 
 #### Setup your Environment
-This article assumes the reader is familar with Solidity programing Language 
 
 To get started, 
 Let’s create a hello world contract using foundry.
