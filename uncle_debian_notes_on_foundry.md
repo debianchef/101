@@ -1,5 +1,8 @@
 # Development 
 
+
+#### Setup your Environment
+
 To get started, we will learn solidity as a language.
 Let’s create a hello world using foundry.
 
@@ -33,7 +36,7 @@ forge init MyfirstContract --no-commit
 ```
 ---
 >[!NOTE]
->Forge is a command-line tool that ships with Foundry. Forge  tests, builds, and deploys your smart contracts
+>Foundry is a development framework to make testing, development, and deployment easier.Forge is a command-line tool that ships with Foundry. Forge  tests, builds, and deploys your smart contracts
 ---
 
 Your Project Directory should look like this .
@@ -167,9 +170,9 @@ forge test --mt  test_helloWorld_function -vvvv
 
 We can also run 
 ```bash 
-forge test --match-contract MyHelloWorldTest --match-test test_helloWorld_function
+forge test --match-contract MyHelloWorldTest --match-test test_helloWorld_function -vvvv
 ```
-to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` contract
+to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` contract and display output.
 
 
 
