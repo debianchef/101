@@ -1,4 +1,4 @@
-## Development 
+# Development 
 
 To get started, we will learn solidity as a language.
 Let’s create a hello world using foundry.
@@ -32,9 +32,10 @@ After installation , Lets run the  command below  in terminal  to creates a new 
 forge init MyfirstContract --no-commit
 ```
 
+>[!NOTE]
+>Forge is a command-line tool that >ships with Foundry. Forge tests, builds, and deploys your smart contracts
+>Your Project Directory should look like this .
 
-
-Your Project Directory should look like this .
 
 ![alt text](image.png)
 
@@ -55,6 +56,35 @@ We can also see that there are files inside these folders with `.sol` extentions
  
 
 
+#### Imports 
+
+We can run below command to see how forge is  mapping out  dependencies ;
+
+```bash
+forge re
+```
+or 
+
+```bash
+forge remappings
+```
+![alt text](image-4.png)
+
+
+forge-std/ can be found(=) or (maps to ) in the lib/forge-std/src/ directory 
+
+We can now craft our import statement as follows
+
+```bash
+import "forge-std/Test.sol"
+```
+
+We can also import contracts buy crafting the statement 
+Assuuming we want to import our MyfirstContract contract 
+
+```bash
+import {MyHelloWorldContract} from "../src/MyHelloWorld.sol";
+```
 
 
 ![alt text](image-1.png)
@@ -70,6 +100,7 @@ forge build
 
 
 
+#### Testing
 
 
 The test code should look something like this 
@@ -88,7 +119,7 @@ MyHelloWorldContract helloWorldcontract;
     }
 
 
-function test_helloWorld () public {
+function test_helloWorld_function () public {
    uint256 number = 100;
    uint256 result = helloWorldcontract.helloWorld();
 assertEq(number , result);
@@ -99,16 +130,26 @@ assertEq(number , result);
 }
 ```
 
-Now  copy or type the code in the new file created in the `/test` folder and run the command
+>[!NOTE]
+>You noitced that the test contract  ends with .t.sol
+
+Now  copy or type the code in the new file created in the `/test` folder and run the command :
+
+To run all test incase we have multiple function :
+
+```bash
+forge test 
+```
+
+Since we only have a single function and we want to  run only that, we can use the command :
 
 ```bash
 forge test --mt  test_helloWorld_function 
 ```
+This  will look search inside your project  for a test function called `test_helloWorld_function`
+Remember to add `test` before your function name this is becuase  contract with a function that starts with test is considered to be a test. 
+In the our case  we added `test` to `_helloWorld_function`  .
 
-
-This command will look inside your test folder for a test function called `test_helloWorld_function`
-Remember to add `test` before your function name since foundry uses that for function calls. In the case below 
-we added `test` to `_helloWorld_function`  .
 
 
 To display output add flag -vvvv :
@@ -116,12 +157,14 @@ To display output add flag -vvvv :
 forge test --mt  test_helloWorld_function -vvvv
 ```
 
-To run all test incase we have multiple function calls :
-
-```bash
-forge test 
+We can also run 
+```bash 
+forge test --match-contract MyHelloWorldTest --match-test test_helloWorld_function
 ```
+to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` contract
 
 
 ![alt text](image-3.png)
+
+
 
