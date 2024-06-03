@@ -10,7 +10,7 @@ Open your terminal and run the following command:
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
->[!ℹ️ NOTE]
+>[!NOTE]
 > If you’re on Windows, you will need to install and use Git BASH or WSL, as your terminal
 
 
