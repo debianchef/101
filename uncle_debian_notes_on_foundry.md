@@ -151,8 +151,8 @@ forge test --mt  test_helloWorld_function
 This  will  search inside your project  for a test function called `test_helloWorld_function`.
 
 ---
-[!IMPORTANT]
->Remember to add `test` before your function name. This is because contract with a function that starts with test is considered to be a test.
+>[!IMPORTANT]
+> Remember to add `test` before your function name. This is because contract with a function that starts with test is considered to be a test.
 --- 
 
 In the our case  we added `test` to `_helloWorld_function`  .
