@@ -90,17 +90,13 @@ We can also import our contract by crafting the import statement assuming we wan
 import {MyHelloWorldContract} from "../src/MyHelloWorld.sol";
 ```
 
-Our project directory and contract should look like this 
-
-![alt text](image-1.png)
-
 
 To compile the code we run the following command :
 
 ```bash
 forge build  
 ```
-
+![alt text](image-6.png)
 
 
 # Testing
