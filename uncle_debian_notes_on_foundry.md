@@ -2,9 +2,10 @@
 
 
 #### Setup your Environment
+This article assumes the reader is familar with Solidity programing Language 
 
-To get started, we will learn solidity as a language.
-Let’s create a hello world using foundry.
+To get started, 
+Let’s create a hello world contract using foundry.
 
 ```solidity
 
@@ -83,8 +84,7 @@ We can now craft our import statement as follows
 import "forge-std/Test.sol"
 ```
 
-We can also import contracts buy crafting the statement 
-Assuuming we want to import our MyfirstContract contract 
+We can also import our contract by crafting the import statement assuming we want to import our MyfirstContract contract  and call its functions
 
 ```bash
 import {MyHelloWorldContract} from "../src/MyHelloWorld.sol";
