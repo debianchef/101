@@ -26,10 +26,10 @@ curl -L https://foundry.paradigm.xyz | bash
 
 This will install Foundryup, then simply follow the instructions on-screen, which will make the foundryup command available in your CLI
 
-After installation , run the following command to create , navigate to MyfirstContract directory and initialize the foundry project to develop our contract.
+After installation , Lets run the  command below  in terminal  to creates a new directory `MyfirstContract`   using foundry default template and  also initialize a new git repository
 
 ```bash
-mkdir MyfirstContract && cd MyfirstContract && forge init --no-commit
+forge init MyfirstContract --no-commit
 ```
 
 
@@ -39,21 +39,23 @@ Your Project Directory should look like this .
 ![alt text](image.png)
 
 
+# Project Layout
+
 We can see that some starter files has been downloaded in our workspace. Lets walkthrough : 
 
- 1. The `/lib` folder is where all  downloaded libraries or dependancies  will be placed. 
+ 1. The `/lib` folder is where all  downloaded libraries  will be stored. (dependencies are stored as git submodules)
 
  2. The  `/script` folder is where we will be writing our deploy script.
 
- 3. The `/src` folder is where we will be writing our contract (main project dir)
+ 3. The `/src` folder is where we will be writing our contract (default directory for contracts)
 
- 4. The `/test` folder is where we will be writing test for all the contracts.
+ 4. The `/test` folder is where we will be writing test for all the contracts.(default directory for tests)
 
 We can also see that there are files inside these folders with `.sol` extentions.  These files are solidity files
  
 
 
-Now lets go ahead and create a new file `MyHelloWorld.sol` in the `/src` folder and type the contract code  . Note that the name does not matter. You can name it anything.
+
 
 ![alt text](image-1.png)
 
@@ -68,4 +70,58 @@ forge build
 
 
 
+
+
+The test code should look something like this 
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+import {Test} from "forge-std/Test.sol";
+import {MyHelloWorldContract} from "../src/MyHelloWorld.sol";
+
+contract MyHelloWorldTest is Test {
+MyHelloWorldContract helloWorldcontract;
+
+    function setUp() public {
+        helloWorldcontract = new MyHelloWorldContract();
+    }
+
+
+function test_helloWorld () public {
+   uint256 number = 100;
+   uint256 result = helloWorldcontract.helloWorld();
+assertEq(number , result);
+}
+
+
+
+}
+```
+
+Now  copy or type the code in the new file created in the `/test` folder and run the command
+
+```bash
+forge test --mt  test_helloWorld_function 
+```
+
+
+This command will look inside your test folder for a test function called `test_helloWorld_function`
+Remember to add `test` before your function name since foundry uses that for function calls. In the case below 
+we added `test` to `_helloWorld_function`  .
+
+
+To display output add flag -vvvv :
+```bash
+forge test --mt  test_helloWorld_function -vvvv
+```
+
+To run all test incase we have multiple function calls :
+
+```bash
+forge test 
+```
+
+
+![alt text](image-3.png)
 
