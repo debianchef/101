@@ -41,10 +41,10 @@ Your Project Directory should look like this .
 
 We can see that some starter files has been downloaded in our workspace. Lets walkthrough : 
 
-The `lib` folder is where all  downloaded libraries or dependancies  will be placed. 
-The  `script` folder is where we will be writing our deploy script.
-The `src` folder is where we will be writing our contract (main project dir)
-The `test` folder is where we will be writing test for all the contracts.
+>The `lib` folder is where all  downloaded libraries or dependancies  will be placed. 
+>The  `script` folder is where we will be writing our deploy script.
+>The `src` folder is where we will be writing our contract (main project dir)
+>The `test` folder is where we will be writing test for all the contracts.
 
 
 We can also wee that there are files inside these folders with .sol. These files are solidity files
