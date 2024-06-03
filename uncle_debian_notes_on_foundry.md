@@ -41,7 +41,7 @@ forge init MyfirstContract --no-commit
 
 Your Project Directory should look like this .
 
-![alt text](image.png)
+![alt text](image-5.png)
 
 
 #### Project Layout
@@ -175,6 +175,7 @@ forge test --match-contract MyHelloWorldTest --match-test test_helloWorld_functi
 to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` contract and display output.
 
 
+The test should pass wihout any issues 
 
 ![alt text](image-3.png)
 
