@@ -31,11 +31,12 @@ After installation , Lets run the  command below  in terminal  to creates a new 
 ```bash
 forge init MyfirstContract --no-commit
 ```
-
+---
 >[!NOTE]
->Forge is a command-line tool that >ships with Foundry. Forge tests, builds, and deploys your smart contracts
->Your Project Directory should look like this .
+>Forge is a command-line tool that ships with Foundry. Forge  tests, builds, and deploys your smart contracts
 
+
+Your Project Directory should look like this .
 
 ![alt text](image.png)
 
@@ -129,7 +130,7 @@ assertEq(number , result);
 
 }
 ```
-
+---
 >[!NOTE]
 >You noitced that the test contract  ends with .t.sol
 
@@ -146,8 +147,8 @@ Since we only have a single function and we want to  run only that, we can use t
 ```bash
 forge test --mt  test_helloWorld_function 
 ```
-This  will look search inside your project  for a test function called `test_helloWorld_function`
-Remember to add `test` before your function name this is becuase  contract with a function that starts with test is considered to be a test. 
+This  will  search inside your project  for a test function called `test_helloWorld_function`.
+Remember to add `test` before your function name. This is because contract with a function that starts with test is considered to be a test. 
 In the our case  we added `test` to `_helloWorld_function`  .
 
 
@@ -162,6 +163,7 @@ We can also run
 forge test --match-contract MyHelloWorldTest --match-test test_helloWorld_function
 ```
 to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` contract
+
 
 
 ![alt text](image-3.png)
