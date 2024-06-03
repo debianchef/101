@@ -39,7 +39,7 @@ Your Project Directory should look like this .
 ![alt text](image.png)
 
 
-# Project Layout
+#### Project Layout
 
 We can see that some starter files has been downloaded in our workspace. Lets walkthrough : 
 
