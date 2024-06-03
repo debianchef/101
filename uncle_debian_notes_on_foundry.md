@@ -49,6 +49,12 @@ We can see that some starter files has been downloaded in our workspace. Lets wa
 
  4. The `/test` folder is where we will be writing test for all the contracts.
 
-
 We can also see that there are files inside these folders with `.sol` extentions.  These files are solidity files
  
+
+
+Now lets go ahead and create a new file `MyHelloWorld.sol` in the `/src` folder and paste our contract code . Note that the name does not matter. You can name it anything.
+
+![alt text](image-1.png)
+
+
