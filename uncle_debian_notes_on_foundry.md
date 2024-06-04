@@ -226,7 +226,7 @@ And the test function
 
  # Traces
 
-Forge can produce traces for test by adding -vvvv or -vv
+By now you have already seen that forge can produce traces for test by adding -vvvv or -vv
 
 ![image-11](https://github.com/debianchef/uncle-debian-notes/assets/108822895/9aad66f2-ce6d-42ad-b7b8-37bfdfc997a5)
 
