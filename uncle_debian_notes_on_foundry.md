@@ -228,7 +228,7 @@ And the test function
 
 Forge can produce traces for test by adding -vvvv or -vv
 
-![image-11](https://github.com/debianchef/uncle-debian-notes/assets/108822895/9aad66f2-ce6d-42ad-b7b8-37bfdfc997a5)
+![image](https://github.com/debianchef/uncle-debian-notes/assets/108822895/9f02a7b4-b6c7-46b8-b91e-840b53c9b48f)
 
 
  Traces above  follows the general format below:
