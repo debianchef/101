@@ -1,8 +1,7 @@
-# Development 
-This article assumes the reader is familar with [Solidity Programing Language](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_basic_solidity.md) .
+ This article assumes the reader is familar with [Solidity Programing Language](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_basic_solidity.md) .
 
 
-#### Setup your Environment
+# Setup your Environment
 
 To get started, 
 Let’s create a hello world contract using foundry.
@@ -174,4 +173,40 @@ The test should pass without any issues
 ![alt text](image-3.png)
 
 
+We can see that there a new function  called `setUp()`.In foundry we use it to setup  the your imported contract for test functions to properly operate.We can also see that inside the the setUp() function there is a declaration .
 
+>[!IMORTANT]
+>Pay close attention to the spelling of the   function `setUp()` .
+
+we use this line of code to deploy a fresh instance of `MyHelloWorldContract` before each test case is ran. 
+```solidiy
+helloWorldcontract = new MyHelloWorldContract();
+```
+
+#### Assertions
+
+Function helloWorld() in  MyHelloWorldContract.sol returns `100` any time its called. To verify that the function will return 100 , we declared a local  
+```solidity
+  uint256 number = 100;
+```
+ `assertEq` is used to compare  two values will be equal. Example `a==b`. Read more on 
+[assertions](https://book.getfoundry.sh/reference/forge-std/assertEq)  in foundry  
+
+
+
+
+####  Cheatcodes
+
+
+Lets add an input parameter to   function `HelloWord()`
+
+![alt text](image-9.png)
+
+
+And the test function 
+
+
+![alt text](image-10.png)
+
+
+We can see some  
