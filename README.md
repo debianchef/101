@@ -1,4 +1,4 @@
-(Uncle Debian's notes Foundry)[https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md]
+[Uncle Debian's notes Foundry](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
 
  If you find this resource helpful. Share  
 
