@@ -39,71 +39,84 @@
 24. [Modifiers](#modifiers)
 
 
-#### Variables
+### Variables
 
 Solidity supports a variety of data types including:
 
 1. Address
-2. Bytes
-3. String
-4. Arrays
-5. Structs
-6. Enumerations
-7. Integer
-8. Boolean
-
-
-
-1. Address
-```solidty
-solidityCopy codeaddress myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+An address is a reference type that stores the location of an account on the Ethereum blockchain
+```solidity
+myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
 
 2. Bytes
-```solidty
+Bytes are reference types used to store fixed-size binary data. They store the location of the data in memory.
+```solidity
 solidityCopy codebytes2 myBytes2 = 0x1234;
 bytes32 myBytes32 = 0x1234567890abcdef1234567890abcdef12345678901234567890abcdef12345678;
 ```
 3. String
-```solidty
+A string is a reference type that stores the location of a sequence of characters in memory.
+```solidity
 solidityCopy codestring myString = "Hello, World!";
 ```
 
 4. Arrays
-```solidty
+Arrays are reference types that store references to a list of elements' memory locations.
+
+```solidity
 solidityCopy codeuint[] myArray = [1, 2, 3, 4, 5];
 uint[5] myFixedArray = [1, 2, 3, 4, 5];
 ```
 
 5. Structs
-```solidty
-solidityCopy codestruct Person {
-    string name;
-    uint age;
-}
 
+A struct  is a `reference` variable because it stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored.
+
+```solidity
+struct User {
+    string name;
+    uint256 balance;
+} 
+
+//usage 
 Person john = Person("John Doe", 30);
 ```
 
 6. Enumerations
-```solidty
-solidityCopy codeenum Color {Red, Green, Blue}
+Enumerations (enums) are user-defined types that consist of a set of named constants called elements or members. They store the location of these constants in memory
 
+```solidity
+enum Color {Red, Green, Blue}
 Color myColor = Color.Green;
 ```
 
 7. Integer
-```solidty
-solidityCopy codeint8 myInt8 = -127;
+Integers are value types that directly store the value within the variable itself.
+solidity
+```solidity
+int8 myInt8 = -127;
 uint256 myUint256 = 12345678901234567890;
 ```
 
 8. Boolean
-```solidty
-solidityCopy codebool myBool = true;
+
+A boolean is a value type that directly stores the true or false value within the variable itself.
+
+```solidity
+bool myBool = true;
 ```
 
-#### Immutable Variables
+In Solidity, variables can be classified according to their data location. The data location specifies where the variable's value is stored.The  data locations include :
+
+1. Storage: Variables with this data location are stored permanently on the blockchain
+`
+
+2. Memory: Variables with this data location are stored temporarily in memory and are erased after the function call completes.
+
+
+>[!NOTE]
+>A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored.
 
 #### Constants
 
