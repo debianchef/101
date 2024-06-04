@@ -209,4 +209,45 @@ And the test function
 ![alt text](image-10.png)
 
 
-We can see some  
+ `vm.prank(Alice);` and `vm.assume(number > 99);`  are foundry [cheatCode](https://book.getfoundry.sh/cheatcodes/).You do serveral things with them.
+ 1. Change identity  `vm.prank(Alice);`
+ 2. inject specific conditions as true `vm.assume(number > 99);`.
+
+
+ To execute a cheatcode function you will have to `import {Test} from "forge-std/Test.sol";`  and inherit all functions from the Test contract found in the `/lib/forge-std` directory
+
+ 
+
+ # Traces
+
+Forge can produce traces for test by adding -vvvv or -vv
+
+![alt text](image-11.png)
+
+
+ Traces above  follows the general format below:
+
+```solidity
+  [<Gas Usage>] <Contract>::<Function>(<Parameters>)
+    ├─ [<Gas Usage>] <Contract>::<Function>(<Parameters>)
+    │   └─ ← <Return Value>
+    └─ ← <Return Value>
+```
+
+
+Colors associated with traces has variety of meanings
+
+Green: For calls that do not revert
+
+Red: For reverting calls
+
+Blue: For calls to cheat codes
+
+Cyan: For emitted logs
+
+Yellow: For contract deployments
+
+
+
+# Deployment 
+
