@@ -41,7 +41,8 @@ forge init MyfirstContract --no-commit
 
 Your Project Directory should look like this .
 
-![alt text](https://imgur.com/kwrtktu)
+
+![image-5](https://github.com/debianchef/uncle-debian-notes/assets/108822895/4deaa8a0-64d6-41ab-a9d2-7696a15b957f)
 
 
 #### Project Layout
@@ -72,7 +73,8 @@ or
 ```bash
 forge remappings
 ```
-![alt text](image-4.png)
+
+![image-4](https://github.com/debianchef/uncle-debian-notes/assets/108822895/7da65357-46d3-4af1-9dd3-065dce824700)
 
 
 forge-std/ can be found(=) or (maps to ) in the lib/forge-std/src/ directory 
@@ -95,7 +97,8 @@ To compile the code we run the following command :
 ```bash
 forge build  
 ```
-![alt text](image-6.png)
+
+![image-6](https://github.com/debianchef/uncle-debian-notes/assets/108822895/ca5c8609-5dad-463b-a76b-923a5a5611a9)
 
 
 # Testing
@@ -170,7 +173,8 @@ to specifically  call the `test_helloWorld_function` in the `MyHelloWorldTest` c
 
 The test should pass without any issues 
 
-![alt text](image-3.png)
+
+![image-3](https://github.com/debianchef/uncle-debian-notes/assets/108822895/e7a2bb14-f984-4eb7-83f6-d71a90656961)
 
 
 We can see that there a new function  called `setUp()`.In foundry we use it to setup  the your imported contract for test functions to properly operate.We can also see that inside the the setUp() function there is a declaration .
@@ -200,13 +204,15 @@ Function helloWorld() in  MyHelloWorldContract.sol returns `100` any time its ca
 
 Lets add an input parameter to   function `HelloWord()`
 
-![alt text](image-9.png)
+
+![image-9](https://github.com/debianchef/uncle-debian-notes/assets/108822895/f9c2de97-9ea4-4bac-89e0-109859628a9f)
 
 
 And the test function 
 
 
-![alt text](image-10.png)
+
+![image-10](https://github.com/debianchef/uncle-debian-notes/assets/108822895/4eec885a-380b-4c08-ad94-3eac92177acd)
 
 
  `vm.prank(Alice);` and `vm.assume(number > 99);`  are foundry [cheatCode](https://book.getfoundry.sh/cheatcodes/).You do serveral things with them.
@@ -222,7 +228,7 @@ And the test function
 
 Forge can produce traces for test by adding -vvvv or -vv
 
-![alt text](image-11.png)
+![image-11](https://github.com/debianchef/uncle-debian-notes/assets/108822895/9aad66f2-ce6d-42ad-b7b8-37bfdfc997a5)
 
 
  Traces above  follows the general format below:
