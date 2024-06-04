@@ -41,7 +41,7 @@ forge init MyfirstContract --no-commit
 
 Your Project Directory should look like this .
 
-![alt text](image-5.png)
+![alt text](https://imgur.com/kwrtktu)
 
 
 #### Project Layout
