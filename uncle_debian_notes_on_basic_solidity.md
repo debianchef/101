@@ -44,7 +44,7 @@
 Solidity supports a variety of data types including:
 
 1. Address
-An address is a reference type that stores the location of an account on the Ethereum blockchain
+An address is a value  type that stores the location of an account on the Ethereum blockchain
 ```solidity
 myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
@@ -52,13 +52,13 @@ myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 2. Bytes
 Bytes are reference types used to store fixed-size binary data. They store the location of the data in memory.
 ```solidity
-solidityCopy codebytes2 myBytes2 = 0x1234;
+bytes2 myBytes2 = 0x1234;
 bytes32 myBytes32 = 0x1234567890abcdef1234567890abcdef12345678901234567890abcdef12345678;
 ```
 3. String
 A string is a reference type that stores the location of a sequence of characters in memory.
 ```solidity
-solidityCopy codestring myString = "Hello, World!";
+string myString = "Hello, World!";
 ```
 
 4. Arrays
@@ -88,16 +88,33 @@ Enumerations (enums) are user-defined types that consist of a set of named const
 
 ```solidity
 enum Color {Red, Green, Blue}
+
+//usage 
 Color myColor = Color.Green;
 ```
 
 7. Integer
 Integers are value types that directly store the value within the variable itself.
+signed integers
+Int8 —>   [-128 : 127]
+Int16 —> [-32768 : 32767]
+Int32 —> [-2147483648 : 2147483647]
+
+unsigned integers
+UInt8 — [0 : 255]
+UInt16 — [0 : 65535]
+UInt32 — [0 : 4294967295]
+UInt64 — [0 : 18446744073709551615]
+
+
 solidity
 ```solidity
 int8 myInt8 = -127;
 uint256 myUint256 = 12345678901234567890;
 ```
+>[!NOTE]
+>Solidity reserves 256 bits of storage regardless of the uint size
+
 
 8. Boolean
 
