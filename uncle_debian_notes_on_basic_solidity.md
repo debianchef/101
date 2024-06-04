@@ -44,24 +44,28 @@
 Solidity supports a variety of data types including:
 
 1. Address
+
 An address is a value  type that stores the location of an account on the Ethereum blockchain
 ```solidity
 myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
 
 2. Bytes
+
 Bytes are reference types used to store fixed-size binary data. They store the location of the data in memory.
 ```solidity
 bytes2 myBytes2 = 0x1234;
 bytes32 myBytes32 = 0x1234567890abcdef1234567890abcdef12345678901234567890abcdef12345678;
 ```
 3. String
+
 A string is a reference type that stores the location of a sequence of characters in memory.
 ```solidity
 string myString = "Hello, World!";
 ```
 
 4. Arrays
+
 Arrays are reference types that store references to a list of elements' memory locations.
 
 ```solidity
