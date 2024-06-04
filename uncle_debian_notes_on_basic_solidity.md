@@ -80,7 +80,7 @@ struct User {
 } 
 
 //usage 
-Person john = Person("John Doe", 30);
+User john = User("John Doe", 30);
 ```
 
 6. Enumerations
