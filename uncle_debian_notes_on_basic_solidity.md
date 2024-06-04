@@ -65,7 +65,7 @@ solidityCopy codestring myString = "Hello, World!";
 Arrays are reference types that store references to a list of elements' memory locations.
 
 ```solidity
-solidityCopy codeuint[] myArray = [1, 2, 3, 4, 5];
+uint[] myArray = [1, 2, 3, 4, 5];
 uint[5] myFixedArray = [1, 2, 3, 4, 5];
 ```
 
