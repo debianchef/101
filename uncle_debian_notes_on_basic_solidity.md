@@ -98,6 +98,7 @@ Color myColor = Color.Green;
 ```
 
 7. Integer
+
 Integers are value types that directly store the value within the variable itself.
 signed integers
 Int8 —>   [-128 : 127]
@@ -128,6 +129,10 @@ A boolean is a value type that directly stores the true or false value within th
 bool myBool = true;
 ```
 
+>[!NOTE]
+>A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored.
+
+
 In Solidity, variables can be classified according to their data location. The data location specifies where the variable's value is stored.The  data locations include :
 
 1. Storage: Variables with this data location are stored permanently on the blockchain
@@ -136,10 +141,10 @@ In Solidity, variables can be classified according to their data location. The d
 2. Memory: Variables with this data location are stored temporarily in memory and are erased after the function call completes.
 
 
->[!NOTE]
->A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored.
+
 
 #### Constants
+
 
 ####
 
