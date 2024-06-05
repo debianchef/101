@@ -1,5 +1,5 @@
 # Solidity Basics
----
+
 ## Table of Contents
 
 ## Getting started 
