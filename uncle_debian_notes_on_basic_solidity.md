@@ -76,8 +76,8 @@ A struct  is a `reference` variable because it stores the memory address of anot
 
 ```solidity
 struct User {
-    string name;
-    uint256 balance;
+string name;
+uint256 balance;
 } 
 
 //usage 
@@ -85,14 +85,31 @@ User john = User("John Doe", 30);
 ```
 
 6. Enumerations
+
 Enumerations (enums) are user-defined types that consist of a set of named constants called elements or members. They store the location of these constants in memory
 
 ```solidity
-enum Color {Red, Green, Blue}
+enum Color {Red,
+	Green,
+	Blue
+
+}
 
 //usage 
 Color myColor = Color.Green;
 ```
+
+>[!Note]
+>Enums are internally represented as uint (unsigned integer). The first value in the enum has the value 0, the second value has the value 1, and so on.
+>
+>```console
+>// Default value is always first element listed in
+>// Returns uint
+>//      Red, => 0
+>//      Green, => 1
+>//      Blue => 2
+>```
+
 
 7. Integer
 
@@ -111,13 +128,15 @@ UInt32 — [0 : 4294967295]
 UInt64 — [0 : 18446744073709551615]
 ```
 
-solidity
+Examples
+
 ```solidity
 int8 myInt8 = -127;
 uint256 myUint256 = 12345678901234567890;
 ```
 >[!NOTE]
 >Solidity reserves 256 bits of storage regardless of the uint size
+
 
 
 8. Boolean
@@ -145,8 +164,10 @@ In Solidity, variables can be classified according to their data location. The d
 
 Wei and Gwei are smaller units of Ether, used for more precise transactions.
 
+```console
 1 Ether (ETH) = 10^18 Wei
 1 Ether (ETH) = 10^9 Gwei (Giga-Wei)
+```
 
 #### Arithmetic Operations
 
