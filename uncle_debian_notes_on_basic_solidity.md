@@ -4,38 +4,37 @@
 
 ## Getting started 
 1. [Variables](#Variables)
-
 2. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
 
 ## Concepts
-6. [Arithmetic Operations](#arithmetic-operations)
-7. [Conditional Statements (If)](#conditional-statements-if)
-8. [Loops (For)](#loops-for)
-9. [Structs](#structs)
+3. [Arithmetic Operations](#arithmetic-operations)
+4. [Conditional Statements (If)](#conditional-statements-if)
+5. [Loops (For)](#loops-for)
+6. [Structs](#structs)
 
 
 ## Types of Functions
-12. [Constructor Functions](#constructor-functions)
-13. [Require Statement](#require-statement)
-14. [Payable Functions](#payable-functions)
-15. [Receive Function](#receive-function)
-16. [Modifiers](#modifiers)
+7. [Constructor Functions](#constructor-functions)
+8. [Require Statement](#require-statement)
+9. [Payable Functions](#payable-functions)
+10. [Receive Function](#receive-function)
+11. [Modifiers](#modifiers)
 
 ## Token and Contract Interaction
-17. [ERC20 Tokens](#erc20-tokens)
-18. [ABI Encoding](#abi-encoding)
-19. [Interacting with Other Contracts](#interacting-with-other-contracts)
-20. [msg.sender and address(this)](#msgsender-and-addressthis)
+12. [ERC20 Tokens](#erc20-tokens)
+13. [ABI Encoding](#abi-encoding)
+14. [Interacting with Other Contracts](#interacting-with-other-contracts)
+15. [msg.sender and address(this)](#msgsender-and-addressthis)
 
 ##  Features
-21. [Block Data (timestamp, number)](#block-data-timestamp-number)
-22. [Events](#events)
-23. [Inheritance](#inheritance)
-24. [Interfaces](#interfaces)
-25.    [Evm, Storage, Opcodes](#evm)
+16. [Block Data (timestamp, number)](#block-data-timestamp-number)
+17. [Events](#events)
+18. [Inheritance](#inheritance)
+19. [Interfaces](#interfaces)
+20. [Evm, Storage, Opcodes](#evm)
 
 ## Pattern
-2.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
+21.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
 ### Variables
