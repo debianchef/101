@@ -40,28 +40,28 @@
 #### Variables
 Solidity supports a variety of data types including:
 
-1. Address
+1. `Address`
 
 An address is a value  type that stores the location of an account on the Ethereum blockchain
 ```solidity
 address myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
 
-2. Bytes , Byte
+2. `Bytes , Byte`
 
 Bytes are reference types used to store fixed-size binary data. They store the location of the data in memory.
 ```solidity
 bytes2 myBytes2 = 0x1234;
 bytes32 myBytes32 = 0x1234567890abcdef1234567890abcdef12345678901234567890abcdef12345678;
 ```
-3. String
+3. `String`
 
 A string is a reference type that stores the location of a sequence of characters in memory.
 ```solidity
 string myString = "Hello, World!";
 ```
 
-4. Arrays
+4. `Arrays`
 
 Arrays are reference types that store references to a list of elements' memory locations.
 
@@ -70,7 +70,7 @@ uint[] myArray = [1, 2, 3, 4, 5];
 uint[5] myFixedArray = [1, 2, 3, 4, 5];
 ```
 
-5. Structs
+5. `Structs`
 
 A struct  is a `reference` variable because it stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored.
 
@@ -84,9 +84,9 @@ uint256 balance;
 User john = User("John Doe", 30);
 ```
 
-6. Enumerations
+6. `Enumerations`
 
-Enumerations (enums) are user-defined types that consist of a set of named constants called elements or members. They store the location of these constants in memory
+Enumerations (enums) are user-defined types that consist of a set of named constants called elements or members. They store the location of these constants in `memory`
 
 ```solidity
 enum Color {Red,
@@ -111,7 +111,7 @@ Color myColor = Color.Green;
 >```
 
 
-7. Integer
+7. `Integer`
 
 Integers are value types that directly store the value within the variable itself.
 
@@ -135,30 +135,30 @@ int8 myInt8 = -127;
 uint256 myUint256 = 12345678901234567890;
 ```
 >[!NOTE]
->Solidity reserves 256 bits of storage regardless of the uint size
+>Solidity reserves `256 bits` of storage regardless of the uint size
 
 
 
-8. Boolean
+8. `Boolean`
 
-A boolean is a value type that directly stores the true or false value within the variable itself.
+A boolean is a value type that directly stores the true or false value within the variable `itself`.
 
 ```solidity
 bool myBool = true;
 ```
 
 >[!NOTE]
->A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored. Every reference type contains information on where it is stored
+>A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in `memory` where the data is stored. Every reference type contains information on where it is `stored`
 
 
 In Solidity, variables can be classified according to their data location. The data location specifies where the variable's value is stored.The  data locations include :
 
-1. Storage: Variables with this data location are stored permanently on the blockchain
+1. `Storage`: Variables with this data location are stored permanently on the blockchain
 `
 
-2. Memory: Variables with this data location are stored temporarily in memory and are erased after the function call completes.
+2. `Memory`: Variables with this data location are stored temporarily in memory and are erased after the function call completes.
 
-3. calldata: Primarily used for external functions.. It behaves like a read-only version of memory, meaning you can't modify its contents.
+3. `calldata`: Primarily used for external functions.. It behaves like a read-only version of memory, meaning you can't modify its contents.
 
 #### Ethereum Units (Wei, Gwei, Ether)
 
