@@ -2,41 +2,36 @@
 ---
 ## Table of Contents
 
-## Getting Started with Solidity
+## Getting started 
 1. [Variables](#Variables)
 2. [Constants](#constants)
 5. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
 
-## Core Programming Concepts
+## Concepts
 6. [Arithmetic Operations](#arithmetic-operations)
 7. [Conditional Statements (If)](#conditional-statements-if)
 8. [Loops (For)](#loops-for)
 9. [Structs](#structs)
 
-## Working with Data
-10. [Arrays and Strings](#arrays-and-strings)
-11. [Mappings](#mappings)
 
-## Functions and Execution
+## Types of Functions
 12. [Constructor Functions](#constructor-functions)
 13. [Require Statement](#require-statement)
 14. [Payable Functions](#payable-functions)
 15. [Receive Function](#receive-function)
+16. [Modifiers](#modifiers)
 
 ## Token and Contract Interaction
-16. [ERC20 Tokens](#erc20-tokens)
-17. [ABI Encoding](#abi-encoding)
-18. [Interacting with Other Contracts](#interacting-with-other-contracts)
-19. [msg.sender and address(this)](#msgsender-and-addressthis)
+17. [ERC20 Tokens](#erc20-tokens)
+18. [ABI Encoding](#abi-encoding)
+19. [Interacting with Other Contracts](#interacting-with-other-contracts)
+20. [msg.sender and address(this)](#msgsender-and-addressthis)
 
-## Blockchain Specific Features
-20. [Block Data (timestamp, number)](#block-data-timestamp-number)
-21. [Events](#events)
-
-## Advanced Solidity Features
-22. [Inheritance](#inheritance)
-23. [Interfaces](#interfaces)
-24. [Modifiers](#modifiers)
+##  Features
+21. [Block Data (timestamp, number)](#block-data-timestamp-number)
+22. [Events](#events)
+23. [Inheritance](#inheritance)
+24. [Interfaces](#interfaces)
 
 
 ### Variables
