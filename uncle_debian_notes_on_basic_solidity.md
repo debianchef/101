@@ -10,15 +10,17 @@
 3. [Arithmetic Operations](#arithmetic-operations)
 4. [Conditional Statements (If)](#conditional-statements-if)
 5. [Loops (For)](#loops-for)
-6. [Structs](#structs)
+
 
 
 ## Types of Functions
-7. [Constructor Functions](#constructor-functions)
+
+7. [Constructor ](#constructor-functions)
 8. [Require Statement](#require-statement)
 9. [Payable Functions](#payable-functions)
 10. [Receive Function](#receive-function)
 11. [Modifiers](#modifiers)
+12. [Fallback Function ](#fallback-function)
 
 ## Token and Contract Interaction
 12. [ERC20 Tokens](#erc20-tokens)
