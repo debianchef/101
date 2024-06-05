@@ -37,7 +37,7 @@
 21.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
-### Variables
+#### Variables
 Solidity supports a variety of data types including:
 
 1. Address
