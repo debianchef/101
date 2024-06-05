@@ -47,7 +47,7 @@ An address is a value  type that stores the location of an account on the Ethere
 address myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
 
-2. Bytes
+2. Bytes , Byte
 
 Bytes are reference types used to store fixed-size binary data. They store the location of the data in memory.
 ```solidity
@@ -97,6 +97,8 @@ Color myColor = Color.Green;
 7. Integer
 
 Integers are value types that directly store the value within the variable itself.
+
+```console
 signed integers
 Int8 —>   [-128 : 127]
 Int16 —> [-32768 : 32767]
@@ -107,7 +109,7 @@ UInt8 — [0 : 255]
 UInt16 — [0 : 65535]
 UInt32 — [0 : 4294967295]
 UInt64 — [0 : 18446744073709551615]
-
+```
 
 solidity
 ```solidity
