@@ -4,8 +4,8 @@
 
 ## Getting started 
 1. [Variables](#Variables)
-2. [Constants](#constants)
-5. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
+
+2. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
 
 ## Concepts
 6. [Arithmetic Operations](#arithmetic-operations)
@@ -32,17 +32,20 @@
 22. [Events](#events)
 23. [Inheritance](#inheritance)
 24. [Interfaces](#interfaces)
+25.    [Evm, Storage, Opcodes](#evm)
+
+## Pattern
+2.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
 ### Variables
-
 Solidity supports a variety of data types including:
 
 1. Address
 
 An address is a value  type that stores the location of an account on the Ethereum blockchain
 ```solidity
-myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+address myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
 
 2. Bytes
@@ -125,7 +128,7 @@ bool myBool = true;
 ```
 
 >[!NOTE]
->A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored.
+>A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in memory where the data is stored. Every reference type contains information on where it is stored
 
 
 In Solidity, variables can be classified according to their data location. The data location specifies where the variable's value is stored.The  data locations include :
@@ -135,15 +138,18 @@ In Solidity, variables can be classified according to their data location. The d
 
 2. Memory: Variables with this data location are stored temporarily in memory and are erased after the function call completes.
 
+3. calldata: Primarily used for external functions.. It behaves like a read-only version of memory, meaning you can't modify its contents.
 
+#### Ethereum Units (Wei, Gwei, Ether)
 
+Wei and Gwei are smaller units of Ether, used for more precise transactions.
 
-#### Constants
+1 Ether (ETH) = 10^18 Wei
+1 Ether (ETH) = 10^9 Gwei (Giga-Wei)
 
+#### Arithmetic Operations
 
-####
-
-####
+#### Conditional Statements (If)
 
 
 
