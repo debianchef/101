@@ -7,4 +7,4 @@
 
 
 
-If you find this resource helpful. Share  
+If you find this  helpful. Share  

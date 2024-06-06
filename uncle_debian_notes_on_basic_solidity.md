@@ -198,9 +198,35 @@ int quotient = a / int(b); // Dividing int and uint
 
 #### Conditional Statements (If)
 
+If statements allow you to execute code based on conditions. The structure is similar to other programming languages. Here's a simple example:
 
 
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
+contract SimpleIfStatements {
+    uint a = 10;
+    uint b = 5;
+
+    function checkValues() public view returns (string memory) {
+		// If 'a' is greater than 'b'
+        if (a > b) {
+            return "a is greater than b";
+        } else if (a == b) {
+            return "a is equal to b";
+        } else {
+            return "a is less than b";
+        }
+    }
+}
+
+```
+[Examples](#examples)
+
+
+>[!NOTE]
+>`pragma solidity ^0.8.0;` is a directive that specifies the version of the Solidity compiler to use. It ensures that the contract is compiled with a version of Solidity that is compatible with 0.8.0 or any newer version that does not introduce breaking changes. This helps prevent issues that might arise from using an incompatible compiler version.
 
 
 
