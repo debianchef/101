@@ -162,6 +162,9 @@ In Solidity, variables can be classified according to their data location. The d
 
 3. `calldata`: Primarily used for external functions.. It behaves like a read-only version of memory, meaning you can't modify its contents.
 
+
+
+
 #### Ethereum Units (Wei, Gwei, Ether)
 
 Wei and Gwei are smaller units of Ether, used for more precise transactions.
@@ -171,7 +174,27 @@ Wei and Gwei are smaller units of Ether, used for more precise transactions.
 1 Ether (ETH) = 10^9 Gwei (Giga-Wei)
 ```
 
+
+
 #### Arithmetic Operations
+
+Just as other programing Languages , we can perform arithmetic operations exactly the same manner 
+
+```console
+int a = -10;
+uint b = 5;
+uint c = 3;
+int sum = a + int(b); // Adding int and uint
+uint exponentiation = b ** c; // Exponentiation of two uints
+uint modulus = b % c; // Modulus of two uints
+int difference = a - int(b); // Subtracting int and uint
+int product = a * int(b); // Multiplying int and uint
+int quotient = a / int(b); // Dividing int and uint
+```
+
+>[!NOTE]
+>In Solidity,  floats are not allowed. This is because they can lead to unexpected behaviours. For example dividing `5 by 3` might yield `1.6666` on one machine and `1.66667` on another. Such discrepancies can cause the blockchain network to disagree on transaction outcomes, leading to potential network splits. Therefore, Solidity avoids floats to ensure determinism and consensus. 
+
 
 #### Conditional Statements (If)
 
