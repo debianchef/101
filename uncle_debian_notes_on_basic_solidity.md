@@ -14,29 +14,28 @@
 
 
 ## Types of Functions
-
+   [Public , External , View , Pure](#functions)
 7. [Constructor ](#constructor-functions)
-8. [Require Statement](#require-statement)
-9. [Payable Functions](#payable-functions)
-10. [Receive Function](#receive-function)
-11. [Modifiers](#modifiers)
+8. [Payable Functions](#payable-functions)
+9. [Receive Function](#receive-function)
+10. [Modifiers](#modifiers)
 12. [Fallback Function ](#fallback-function)
 
 ## Token and Contract Interaction
-12. [ERC20 Tokens](#erc20-tokens)
-13. [ABI Encoding](#abi-encoding)
-14. [Interacting with Other Contracts](#interacting-with-other-contracts)
-15. [msg.sender and address(this)](#msgsender-and-addressthis)
+13. [ERC20 Tokens](#erc20-tokens)
+14. [ABI Encoding](#abi-encoding)
+15. [Interacting with Other Contracts](#interacting-with-other-contracts)
+16. [msg.sender and address(this)](#msgsender-and-addressthis)
 
 ##  Features
-16. [Block Data (timestamp, number)](#block-data-timestamp-number)
-17. [Events](#events)
-18. [Inheritance](#inheritance)
-19. [Interfaces](#interfaces)
-20. [Evm, Storage, Opcodes](#evm)
+17. [Block Data (timestamp, number)](#block-data-timestamp-number)
+18. [Events](#events)
+19. [Inheritance](#inheritance)
+20. [Interfaces](#interfaces)
+21. [Evm, Storage, Opcodes](#evm)
 
 ## Pattern
-21.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
+22.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
 #### Variables
@@ -228,5 +227,35 @@ contract SimpleIfStatements {
 >[!NOTE]
 >`pragma solidity ^0.8.0;` is a directive that specifies the version of the Solidity compiler to use. It ensures that the contract is compiled with a version of Solidity that is compatible with 0.8.0 or any newer version that does not introduce breaking changes. This helps prevent issues that might arise from using an incompatible compiler version.
 
+#### Loops
+
+Solidity supports all the necessary loops just in other programming language.
+`While` 
+`do while` 
+`for` 
 
 
+#### Public , External , Pure and View
+
+
+
+#### Constructor
+
+A constructor is a special function in a smart contract that runs once when the contract is deployed. It initializes the contract's state and sets up variables or settings needed from the start.
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    uint256 public data;
+
+    // Constructor to initialize the data
+    constructor(uint256 initialData) {
+        data = initialData;
+    }
+}
+
+// when the SimpleStorage contract is deployed, the constructor sets the initial value of data
+```
+
+#### Payable Functions
