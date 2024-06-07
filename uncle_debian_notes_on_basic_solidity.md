@@ -14,7 +14,7 @@
 
 
 ## Types of Functions
-   [Public , External , View , Pure](#functions)
+6. [Public , External , View , Pure](#functions)
 7. [Constructor ](#constructor-functions)
 8. [Payable Functions](#payable-functions)
 9. [Receive Function](#receive-function)
