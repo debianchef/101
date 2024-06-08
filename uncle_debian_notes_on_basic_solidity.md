@@ -922,7 +922,8 @@ contract Example {
 
 ## Developing and Deploying Contracts Using Foundry
 
-[Foundry Tutorials](#foundry)
+Visit the link below to learn how to write , test and deploy smart contracts locally . Yessss locally using your favourite IDE prefferably vs-code and foundry
+[Foundry Tutorials](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
 
 
 ![nfda9](https://github.com/debianchef/uncle-debian-notes/assets/108822895/1b0f8b8a-2566-4434-b456-5db3edc4622c)
