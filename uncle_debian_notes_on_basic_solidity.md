@@ -375,6 +375,7 @@ contract SimpleStorage {
 
 
 >[!NOTE]
+> A constructor does not need the  `function` keyword to be declared just as in the example above. Modifier is  also a function that is  declared without `function` keyword.  
 
+#### Modifiers
 
-#### Payable Functions
