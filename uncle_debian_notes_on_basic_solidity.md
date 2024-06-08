@@ -4,7 +4,7 @@
 
 Sure, here's the updated content with the correct numbering and titles formatted with `##`:
 
-```markdown
+
 ## Getting started 
 1. [Variables](#Variables)
 2. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
@@ -37,7 +37,8 @@ Sure, here's the updated content with the correct numbering and titles formatted
 
 ## Pattern
 21. [Checks-effect-interaction pattern](#Checks-effect-interaction)
-```
+
+
 
 #### Variables
 Solidity supports a variety of data types including:
