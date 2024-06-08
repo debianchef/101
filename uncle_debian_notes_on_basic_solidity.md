@@ -944,7 +944,8 @@ We can also integrate foundry into an existing smart contract project.
 [Foundry Tutorials](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
 
 
-![8t8ceo](https://github.com/debianchef/uncle-debian-notes/assets/108822895/06bcdb50-3de0-4536-8ce0-4b394055a783)
+
+![8t8d9w](https://github.com/debianchef/uncle-debian-notes/assets/108822895/4ab6ffa8-ab34-4a16-9f09-828968a2ef9e)
 
 
-You've just mastered some key concepts of Ethereum and Solidity.
+Congratulations!!!. You've just mastered some key concepts of Ethereum and Solidity.
