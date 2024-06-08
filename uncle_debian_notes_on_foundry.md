@@ -257,3 +257,7 @@ Yellow: For contract deployments
 
 # Deployment 
 
+
+
+
+![8t8ceo](https://github.com/debianchef/uncle-debian-notes/assets/108822895/06bcdb50-3de0-4536-8ce0-4b394055a783)
