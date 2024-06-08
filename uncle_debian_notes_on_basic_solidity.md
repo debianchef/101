@@ -375,7 +375,63 @@ contract SimpleStorage {
 
 
 >[!NOTE]
-> A constructor does not need the  `function` keyword to be declared just as in the example above. Modifier is  also a function that is  declared without `function` keyword.  
+> A constructor does not need the  `function` keyword to be declared just as in the example above. `Modifier`, `Receive`, `Fallback` are  also special functions that is  declared without `function` keyword.  
 
 #### Modifiers
+Consider `modifiers` as `Law enforcer` functions which helps ensure `certain conditions` are `met` before executing a function and  improving contract security.Modifiers are declared with the keyword `modifier` followed by the `name`
 
+```solidity
+pragma solidity ^0.8.0;
+
+contract ModifiersExample {
+    address public owner;
+
+    // Modifier to check if the caller is the owner
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not the contract owner");
+        _; 
+    }
+
+    // Constructor to set the contract owner
+    constructor() {
+        owner = msg.sender;
+    }
+
+    // Function that uses the onlyOwner modifier
+    function changeOwner(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+}
+
+```
+modifier `onlyOwner()` checks if the caller is the owner and then executes the function code `_;`
+
+>[!NOTE]
+`msg.sender` is a global variable in Solidity that represents the `address` of the `account` that `called` or `initiated` the current `function`. It is used to `identify` who is `interacting` with the `contract`.You noticed that at  `onlyOwner()` modifier body ends with `_;` . This simply means if the conditions are met ,execute the function.
+
+#### Payable Functions
+Functions that can receive Ether are denoted by the payable keyword `payable`.
+
+Example : 
+
+```solidity
+   function receiveEther() public payable {
+        // Function body can remain empty
+    }
+```
+
+ When calling `receiveEther()`, you can send Ether along with the call
+
+
+#### Receive Function
+ This special function that can be implemented in a contract to handle plain Ether transfers sent to the contract without any data. The receive function is defined using the `receive` keyword and must be marked `payable`
+
+ ```solidity
+ receive() external payable {
+    // Function body
+}
+  ```
+
+
+
+#### Fallback Function
