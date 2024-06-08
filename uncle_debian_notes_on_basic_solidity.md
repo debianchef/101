@@ -662,10 +662,126 @@ contract Example is IExample {
 
 
 ## Understanding Evm, Storage, Opcodes
+#### Evm
+Imagine you have a magic robot (ethereum virtual Machine in short EVM) that can follow special instructions (smart contracts) to do tasks. This robot always does the tasks in the same way, so everyone watching the robot agrees on what it did, no matter where they are
 
 
+`Key Features of Evm` 
+1. Turing-complete: Can execute any computation given enough resources.
+2. Deterministic: Ensures the same inputs produce the same outputs.
+3. Isolated: Each contract runs in isolation, preventing interference between contracts.
+
+Just like programs written in other programming languages, smart contracts  are compiled into bytecode. Bytecode is a low-level, machine-readable representation of the contract that the Ethereum Virtual Machine (EVM) can execute. Since evm  does not directly understand solidity or any other language used to write a contract , it needs to be translated/converted into bytecode by the  compilier.  
+
+
+#### Storage
+Think of storage like a big toy box where you keep your toys (data). Putting a toy in the box (writing data) is a bit hard and takes time (costs more gas), but once it’s in the box, it stays there safely. If you just want to look at your toy (read data), it’s easier and quicker.
+
+
+Key Concepts
+1. Storage Slots: Each state variable is stored in a specific slot.[readmore](#storage)
+2. Gas Costs: Writing to storage is expensive, so optimizing storage usage is crucial.[readmore](#storage)
+3. Mappings and Arrays: Common data structures that interact with storage.
+
+
+>[!IMPORTANT]
+>`Gas` is a unit of measurement that represents the amount of computational effort required to execute operations on the Ethereum network. Every operation performed by the Ethereum Virtual Machine (EVM) has an associated gas cost. By requiring gas for transactions, Ethereum mitigates the risk of Denial-of-Service (DoS) attacks.
+
+#### Opcodes
+`Opcodes` are like the instructions you give to the magic robot (EVM) to do things. Each instruction is very simple, like "add two numbers" or "put a toy in the box." By giving the robot a series of these simple instructions, you can make it do very clever and complex tasks. `Opcodes` are `low-level` instructions executed by the EVM. Each operation (e.g., arithmetic, data access) has a specific opcode. Understanding opcodes helps in writing gas-efficient contracts 
+
+Key Opcodes
+```console
+ADD: Addition operation
+MUL: Multiplication operation
+SLOAD: Load from storage
+SSTORE: Store to storage
+CALL: Calls another contract
+```
+
+
+[More Opcodes](#opcodes)
+ 
+In practice, you rarely write opcodes directly, but tools like assembly language in Solidity (inline assembly) allow for optimized operations
+
+
+Example of Using Opcodes
+```solidity
+pragma solidity ^0.8.0;
+
+contract OpcodeExample {
+
+    function add(uint256 a, uint256 b) public pure returns (uint256 result) {
+        
+		// inline assembly
+		assembly {
+            result := add(a, b) // Directly using the ADD opcode
+        }
+    }
+}
+
+```
 
 ## ERC20 Tokens
+ERC20 tokens are a standardized way of creating and managing tokens on the Ethereum blockchain. They provide interoperability, fungibility, and transferability, making them widely used in various decentralized applications and platforms.
+
+Core ERC20 Functions
+ERC20 tokens must implement the following functions:
+
+
+
+```solidity
+// Total Supply: Returns the total supply of tokens.
+function totalSupply() public view returns (uint256);
+```
+
+```solidity
+//Balance Of: Returns the token balance of a specific address.
+function balanceOf(address account) public view returns (uint256);
+```
+
+```solidity
+// Transfer: Transfers a certain amount of tokens to a specific address.
+function transfer(address recipient, uint256 amount) public returns (bool);
+
+```
+
+```solidity
+
+//Allowance: Returns the remaining number of tokens that a spender is allowed to spend on behalf of the owner.
+
+function allowance(address owner, address spender) public view returns (uint256);
+```
+
+```solidity
+//Approve: Allows a spender to spend a certain amount of the owner’s tokens.
+
+function approve(address spender, uint256 amount) public returns (bool);
+```
+
+```solidity
+//Transfer From: Transfers tokens from one address to another using the allowance mechanism.
+function transferFrom(address sender, address recipient, uint256 amount) public returns (bool);
+```
+
+ERC20 Events
+ERC20 tokens must emit the following events:
+
+
+
+```solidity
+//Approval: Emitted when the allowance of a spender for an owner is set by a call to approve.
+event Transfer(address indexed from, address indexed to, uint256 value);
+
+```
+
+
+```solidity
+event Approval(address indexed owner, address indexed spender, uint256 value);
+```
+
+In the OpenZeppelin [GitHub repository](#https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)  you can find the standard ERC20 token implementation and other useful contracts:
+
 
 
 ## ABI Encoding
