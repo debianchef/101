@@ -48,19 +48,32 @@ An address is a value  type that stores the location of an account on the Ethere
 address myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 ```
 
+`Exercise`:
+[Try in Remix](#remixLink)
+
 2. `Bytes , Byte`
 
 Bytes are reference types used to store fixed-size binary data. They store the location of the data in memory.
+
+Example:
+
 ```solidity
 bytes2 myBytes2 = 0x1234;
 bytes32 myBytes32 = 0x1234567890abcdef1234567890abcdef12345678901234567890abcdef12345678;
 ```
+
+`Exercise`:
+[Try in Remix](#remixLink)
+
 3. `String`
 
 A string is a reference type that stores the location of a sequence of characters in memory.
 ```solidity
 string myString = "Hello, World!";
 ```
+
+`Exercise`:
+[Try in Remix](#remixLink)
 
 4. `Arrays`
 
@@ -70,6 +83,9 @@ Arrays are reference types that store references to a list of elements' memory l
 uint[] myArray = [1, 2, 3, 4, 5];
 uint[5] myFixedArray = [1, 2, 3, 4, 5];
 ```
+
+`Exercise`:
+[Try in Remix](#remixLink)
 
 5. `Structs`
 
@@ -84,6 +100,8 @@ uint256 balance;
 //usage 
 User john = User("John Doe", 30);
 ```
+`Exercise`:
+[Try in Remix](#remixLink)
 
 6. `Enumerations`
 
@@ -99,6 +117,9 @@ enum Color {Red,
 //usage 
 Color myColor = Color.Green;
 ```
+
+`Exercise`:
+[Try in Remix](#remixLink)
 
 >[!Note]
 >Enums are internally represented as uint (unsigned integer). The first value in the enum has the value 0, the second value has the value 1, and so on.
@@ -135,6 +156,9 @@ Examples
 int8 myInt8 = -127;
 uint256 myUint256 = 12345678901234567890;
 ```
+`Exercise`:
+[Try in Remix](#remixLink)
+
 >[!NOTE]
 >Solidity reserves `256 bits` of storage regardless of the uint size
 
@@ -145,8 +169,11 @@ uint256 myUint256 = 12345678901234567890;
 A boolean is a value type that directly stores the true or false value within the variable `itself`.
 
 ```solidity
-bool myBool = true;
+bool myBool = true; 
 ```
+
+`Exercise`:
+[Try in Remix](#remixLink)
 
 >[!NOTE]
 >A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in `memory` where the data is stored. Every reference type contains information on where it is `stored`
@@ -190,9 +217,12 @@ int difference = a - int(b); // Subtracting int and uint
 int product = a * int(b); // Multiplying int and uint
 int quotient = a / int(b); // Dividing int and uint
 ```
+`Exercise`:
+[Try in Remix](#remixLink)
 
 >[!NOTE]
 >In Solidity,  floats are not allowed. This is because they can lead to unexpected behaviours. For example dividing `5 by 3` might yield `1.6666` on one machine and `1.66667` on another. Such discrepancies can cause the blockchain network to disagree on transaction outcomes, leading to potential network splits. Therefore, Solidity avoids floats to ensure determinism and consensus. 
+
 
 
 #### Conditional Statements (If)
@@ -221,7 +251,8 @@ contract SimpleIfStatements {
 }
 
 ```
-[Examples](#examples)
+`Exercise`:
+[Try in Remix](#remixLink)
 
 
 >[!NOTE]
@@ -235,9 +266,17 @@ Solidity supports all the necessary loops just in other programming language.
 `for` 
 
 
+
+`Exercise`:
+[Try in Remix](#remixLink)
+
+
 #### Public , External , Pure and View
 
 
+
+`Exercise`:
+[Try in Remix](#remixLink)
 
 #### Constructor
 
@@ -257,5 +296,12 @@ contract SimpleStorage {
 
 // when the SimpleStorage contract is deployed, the constructor sets the initial value of data
 ```
+
+`Exercise`:
+[Try in Remix](#remixLink)
+
+
+>[!NOTE]
+
 
 #### Payable Functions
