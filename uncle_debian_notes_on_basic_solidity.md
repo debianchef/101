@@ -38,7 +38,9 @@
 20. [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
-Smart contracts can be developed in your browser using [remix-ide](#remix) or locally using your favourite ide and [foundry](#foundry). I will recommend the reader to watch [this youtube](youthttps://youtu.be/vH8T3In6ZkEube) tutorial on remix Ide to see how we can use it to deploy contracts. This is because we will be using it to practice  most of our  examples  as we dive deep. I will also recommend to pause the video and practice the usage.  I will also  discuss how to deploy locally using [foundry] 
+Smart contracts solidity file extention ends with `.sol` just as javascript has `.js`  (e.g  `Mycontract.sol`) and  can be developed in your browser using [remix-ide](#remix) or locally using your favourite ide and [foundry](#foundry). I will recommend you  watch [this video](youthttps://youtu.be/vH8T3In6ZkEube) tutorial on remix Ide to see how we can use it to deploy contracts. This is because we will be using it to practice  most of our  examples  as we dive deep. I will also recommend to pause the video and practice the usage.  I will also  discuss how to deploy locally using [foundry](#).
+
+Lets get Started :
 
 
 #### Variables
@@ -178,10 +180,11 @@ bool myBool = true;
 [Try in Remix](#remixLink)
 
 >[!NOTE]
->A `reference` is a variable that stores the memory address of another variable, allowing indirect access to the value of that variable. Instead of holding the actual data, it points to the location in `memory` where the data is stored. Every reference type contains information on where it is `stored`
+>A `reference` is a variable that stores the `memory` address of another `variable`, allowing indirect access to the `value` of that `variable`. Instead of holding the actual data, it points to the location in `memory` where the data is stored. Every reference type contains information on where it is `stored`
 
 
-In Solidity, variables can be classified according to their data location. The data location specifies where the variable's value is stored.The  data locations include :
+In Solidity, variables can be classified according to their data `location`. The data location specifies where the variable's `value` is `stored`.
+The  data locations include :
 
 1. `Storage`: Variables with this data location are stored permanently on the blockchain
 `
@@ -206,7 +209,7 @@ Wei and Gwei are smaller units of Ether, used for more precise transactions.
 
 #### Arithmetic Operations
 
-Just as other programing Languages , we can perform arithmetic operations exactly the same manner 
+Just as in other programing Languages , we can perform `arithmetic operations` exactly the same manner 
 
 ```console
 int a = -10;
@@ -223,13 +226,13 @@ int quotient = a / int(b); // Dividing int and uint
 [Try in Remix](#remixLink)
 
 >[!NOTE]
->In Solidity,  floats are not allowed. This is because they can lead to unexpected behaviours. For example dividing `5 by 3` might yield `1.6666` on one machine and `1.66667` on another. Such discrepancies can cause the blockchain network to disagree on transaction outcomes, leading to potential network splits. Therefore, Solidity avoids floats to ensure determinism and consensus. 
+>In Solidity,  floats are not allowed. This is because they can lead to unexpected behaviours. For example dividing `5 by 3` might yield `1.6666` on one machine and `1.66667` on another. Such discrepancies can cause the blockchain network to `disagree` on transaction outcomes, leading to potential network splits. Therefore, Solidity avoids floats to ensure determinism and consensus. 
 
 
 
 #### Conditional Statements (If)
 
-If statements allow you to execute code based on conditions. The structure is similar to other programming languages. Here's a simple example:
+`If` statements allow you to execute code based on conditions. The structure is similar to other programming languages. Here's a simple example:
 
 
 ```solidity
@@ -258,8 +261,7 @@ contract SimpleIfStatements {
 
 
 >[!NOTE]
->`pragma solidity ^0.8.0;` is a directive that specifies the version of the Solidity compiler to use. It ensures that the contract is compiled with a version of Solidity that is compatible with 0.8.0 or any newer version that does not introduce breaking changes. This helps prevent issues that might arise from using an incompatible compiler version.
-
+>`pragma solidity ^0.8.0;` is a directive that specifies the version of the Solidity compiler to use. It ensures that the contract is compiled with a version of Solidity that is compatible with `0.8.0` or any newer version that does not introduce breaking changes. This helps prevent issues that might arise from using an incompatible compiler version. You  can also specify your desired version to write your contracts
 #### Loops
 
 Solidity supports all the necessary loops just in other programming language.
@@ -274,7 +276,7 @@ Solidity supports all the necessary loops just in other programming language.
 
 
 #### Public , External , Internal , Private Pure and View
-In Solidity, a `function` is defined using the function keyword followed by the function name, parameters (if any), visibility specifier, and the function body.
+In Solidity, a `function` is defined using the `function` keyword followed by the `function name`, `parameters` (if any), `visibility specifier`, and the `function body`.
 
 ```solidity
 
@@ -286,7 +288,7 @@ function functionName(parameters) visibility returns (returnType) {//function bo
 function Myfunction(uint anyname)    public  returns   (uint)    { return anyname;}
 ```
 
- Here's an example of defining functions with different visibility keywords in Solidity:
+ Here's an example of defining functions with different visibility `keywords` in Solidity:
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -326,7 +328,9 @@ contract VisibilityExamples {
     }
 }
 
-// A new contract that inherits the functionality of VisibilityExamples
+
+// To demonstrate how the visibility works , we have deployed a second contract below  that inherits the functionality of VisibilityExamples 
+// This is only to demonstrate how it works .
 contract ShowVisibilityExamples is VisibilityExamples {
 
     function callPublicFunction(uint256 newData) public {
@@ -354,11 +358,11 @@ contract ShowVisibilityExamples is VisibilityExamples {
 
 
 >[!NOTE]
->The `is` keyword is used to denote inheritance. For example, `contract DerivedContract is ShowVisibilityExamples` means that `ShowVisibilityExamples` contract  inherits all the properties and functions of the `VisibilityExamples` contract. This allows `ShowVisibilityExamples` contract to use and extend the functionality defined in VisibilityExamples, promoting code reuse and organization
+>The `is` keyword is used to denote inheritance. For example, contract `DerivedContract`  `is` `ShowVisibilityExamples` means  `ShowVisibilityExamples` contract  inherits all the properties and functions of the `VisibilityExamples` contract. This allows `ShowVisibilityExamples` contract to use and extend the functionality defined in `VisibilityExamples` contract. This  promoting code reuse and organization incase you dont want to write all your contract code on one single file.
 
 #### Constructor
 
-A constructor is a special function in a smart contract that runs once when the contract is deployed. It initializes the contract's state and sets up variables or settings needed from the start. 
+A `constructor` is a special function in a smart contract that runs `once` when the contract is deployed. It initializes the contract's state and sets up variables or settings needed from the start. 
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -380,10 +384,10 @@ contract SimpleStorage {
 
 
 >[!NOTE]
-> A constructor does not need the  `function` keyword to be declared just as in the example above. `Modifier`, `Receive`, `Fallback` are  also special functions that is  declared without `function` keyword.  
+> A constructor does not need the  `function` keyword to be declared just as in the example above. `Modifier`, `Receive`, `Fallback` are  also special functions that are  declared without `function` keyword.  
 
 #### Modifiers
-Consider `modifiers` as `Law enforcer` functions which helps ensure `certain conditions` are `met` before executing a function and  improving contract security.Modifiers are declared with the keyword `modifier` followed by the `name`
+Consider `modifiers` as `Law enforcer` function which helps to ensure `certain conditions` are `met` before executing a function and  improving contract security. Modifiers are declared with the keyword `modifier` followed by the `name`
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -409,10 +413,14 @@ contract ModifiersExample {
 }
 
 ```
-modifier `onlyOwner()` checks if the caller is the owner and then executes the function code `_;`
+The modifier `onlyOwner()` checks if the caller is the owner and then executes the function code `_;`
 
 >[!NOTE]
-`msg.sender` is a global variable in Solidity that represents the `address` of the `account` that `called` or `initiated` the current `function`. It is used to `identify` who is `interacting` with the `contract`.You noticed that at  `onlyOwner()` modifier body ends with `_;` . This simply means if the conditions are met ,execute the function.
+`msg.sender` is a global variable in Solidity that represents the `address` of the `account` that `called` or `initiated` the current `function`.
+>
+> If you  deploy this contract with your address set in the `constructor` function, you will become `msg.sender` and can perform any actions limited  to `msg.sender` . In short ,   It is used to `identify` who is `interacting` with the `contract`.
+>
+>You noticed that   `onlyOwner()` modifier body ends with `_;` . This simply means if the conditions are met ,execute the function.
 
 #### Payable Functions
 Functions that can receive Ether are denoted by the payable keyword `payable`.
@@ -425,7 +433,7 @@ Example :
     }
 ```
 
-[Try in Remix](#remixLink)
+
 
  When calling `receiveEther()`, you can send Ether along with the call
 
