@@ -1,6 +1,6 @@
 
+<img src="https://github.com/debianchef/uncle-debian-notes/assets/108822895/54b71272-d44c-4304-9cb8-14bcb2780111" width="48">
 
-![8t8g9o](https://github.com/debianchef/uncle-debian-notes/assets/108822895/54b71272-d44c-4304-9cb8-14bcb2780111)
 
 
 ## Table of Contents
