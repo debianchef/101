@@ -1,6 +1,8 @@
 
 <img src="https://github.com/debianchef/uncle-debian-notes/assets/108822895/54b71272-d44c-4304-9cb8-14bcb2780111" width="900" height="500" >
 
+<img width="248" alt="Untitled" src="https://github.com/debianchef/uncle-debian-notes/assets/108822895/237db375-50c9-4ca7-a4cd-958a3787afca">
+
 
 
 ## Table of Contents
