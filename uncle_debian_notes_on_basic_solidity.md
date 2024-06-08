@@ -938,4 +938,29 @@ contract Example {
 
 
 
-[Foundry Tutorials](#foundry)
+The link below introdues you foundry.  Learn how to write , test and deploy smart contracts locally . Yessss locally using your favourite IDE prefferably vs-code and [foundry]((https://book.getfoundry.sh/)). There is no special reason for choosing vs-code. 
+What matters the most is practicing what youve learnt. In the next episode , i will include project ideas to try your hands on . 
+
+You can install Foundry using the following command:
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+Initialize a new project:
+
+```bash
+
+forge init MyProject
+```
+
+We can also integrate foundry into an existing smart contract project. 
+
+[Foundry Tutorials](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
+
+
+
+![8t8d9w](https://github.com/debianchef/uncle-debian-notes/assets/108822895/4ab6ffa8-ab34-4a16-9f09-828968a2ef9e)
+
+
+Congratulations!!!. You've just mastered some key concepts of Ethereum and Solidity.
