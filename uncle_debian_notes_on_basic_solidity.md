@@ -279,6 +279,7 @@ function functionName(parameters) visibility returns (returnType) {//function bo
 
 //          |           |             |                   |             |
 //          |           |             |                   |             |
+//          ↓           ↓             ↓                   ↓             ↓
 function Myfunction(uint anyname)    public  returns   (uint)    { return anyname;}
 ```
 
@@ -435,3 +436,33 @@ Example :
 
 
 #### Fallback Function
+
+When a function call is made to a contract, the data part of the call specifies which function to execute. If the call data does not match any function signature in the contract, the fallback function is triggered if it is defined
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract FallbackExample {
+    address public owner;
+
+    // Constructor to set the contract owner
+    constructor() {
+        owner = msg.sender;
+    }
+
+    // A function with a specific signature
+    function setOwner(address newOwner) public {
+        owner = newOwner;
+    }
+
+    // Fallback function to handle unmatched calls
+    fallback() external payable {
+        // Handle unmatched calls or Ether transfers
+    }
+}
+```
+
+The `setOwner()` is expecting an address `newOwner`  as a paramter . If a call is make to the function with an unmatched type of data , the fallback function will be triggered if defined . 
+
+
+
