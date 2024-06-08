@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+Sure, here's the updated content with the correct numbering and titles formatted with `##`:
+
+```markdown
 ## Getting started 
 1. [Variables](#Variables)
 2. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
@@ -11,32 +14,30 @@
 4. [Conditional Statements (If)](#conditional-statements-if)
 5. [Loops (For)](#loops-for)
 
-
-
 ## Types of Functions
-6. [ Public , External , Internal , Private Pure and View](#functions)
-7. [Constructor ](#constructor-functions)
+6. [Public, External, Internal, Private, Pure and View](#functions)
+7. [Constructor](#constructor-functions)
 8. [Payable Functions](#payable-functions)
 9. [Receive Function](#receive-function)
 10. [Modifiers](#modifiers)
-12. [Fallback Function ](#fallback-function)
+11. [Fallback Function](#fallback-function)
+
+## Features
+12. [Block Data (timestamp, number)](#block-data-timestamp-number)
+13. [Events](#events)
+14. [Inheritance](#inheritance)
+15. [Interfaces](#interfaces)
+16. [Evm, Storage, Opcodes](#evm)
 
 ## Token and Contract Interaction
-13. [ERC20 Tokens](#erc20-tokens)
-14. [ABI Encoding](#abi-encoding)
-15. [Interacting with Other Contracts](#interacting-with-other-contracts)
-16. [msg.sender and address(this)](#msgsender-and-addressthis)
-
-##  Features
-17. [Block Data (timestamp, number)](#block-data-timestamp-number)
-18. [Events](#events)
-19. [Inheritance](#inheritance)
-20. [Interfaces](#interfaces)
-21. [Evm, Storage, Opcodes](#evm)
+17. [ERC20 Tokens](#erc20-tokens)
+18. [ABI Encoding](#abi-encoding)
+19. [Interacting with Other Contracts](#interacting-with-other-contracts)
+20. [msg.sender and address(this)](#msgsender-and-addressthis)
 
 ## Pattern
-22.  [Checks-effect-interaction pattern](#Checks-effect-interaction)
-
+21. [Checks-effect-interaction pattern](#Checks-effect-interaction)
+```
 
 #### Variables
 Solidity supports a variety of data types including:
@@ -462,7 +463,5 @@ contract FallbackExample {
 }
 ```
 
-The `setOwner()` is expecting an address `newOwner`  as a paramter . If a call is make to the function with an unmatched type of data , the fallback function will be triggered if defined . 
-
-
+The `setOwner()` function expects a parameter of type `address`. If a call is made with `data` that doesn't `match` this expected `signature`, the `fallback` function will be `triggered` if it is `defined` in the contract
 
