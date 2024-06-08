@@ -921,11 +921,25 @@ contract Example {
 
 
 ## Developing and Deploying Contracts Using Foundry
+[Foundry](https://book.getfoundry.sh/) is a fast, portable, and modular toolkit for smart contract application development.
 
-Visit the link below to learn how to write , test and deploy smart contracts locally . Yessss locally using your favourite IDE prefferably vs-code and [foundry](#foundry). There is no special reason for choosing vs-code. 
+The link below introdues you foundry.  Learn how to write , test and deploy smart contracts locally . Yessss locally using your favourite IDE prefferably vs-code and [foundry]((https://book.getfoundry.sh/)). There is no special reason for choosing vs-code. 
 What matters the most is practicing what youve learnt. In the next episode , i will include project ideas to try your hands on . 
 
- 
+You can install Foundry using the following command:
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+Initialize a new project:
+
+```bash
+
+forge init MyProject
+```
+
+We can also integrate foundry into an existing smart contract project. 
 
 [Foundry Tutorials](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
 
