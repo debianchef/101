@@ -1,4 +1,8 @@
-[Uncle Debian's note Foundry](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
+
+1. [Uncle Debian's note Solidity](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_basic_solidity.md)
+2. [Uncle Debian's note Foundry](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debian_notes_on_foundry.md)
+3. [Uncle Debian's note Smart Contract Security](https://github.com/debianchef/uncle-debian-notes/blob/trunk/uncle_debians_notes_on_smart_contract_security.md)
+
 
  
 
