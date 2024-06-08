@@ -780,14 +780,150 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
-In the OpenZeppelin [GitHub repository](#https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)  you can find the standard ERC20 token implementation and other useful contracts:
+In the OpenZeppelin [GitHub repository](#https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)  you can find the standard ERC20 token implementation and other useful contracts
 
 
 
 ## ABI Encoding
+ABI (Application Binary Interface) encoding is a way to encode and decode data when interacting with smart contracts on the Ethereum blockchain.
 
 
+Just like fingerprints uniquely identify people, every function in a smart contract has a unique signature that identifies it on the Ethereum network. When you "call" a smart contract, you're sending a message on the Ethereum network with specific information. This information includes the function's unique signature and any necessary data, so the smart contract knows exactly which function to execute.
 
+There are many data encodings, json, xml, etc. Solidity and ethereum use the ABI encoding.
+
+Key Components
+1. Function Selector: The first 4 bytes of the encoded data, derived from the function signature .
+2. Arguments: The parameters passed to the function, encoded according to their types.
+
+
+Consider the following Solidity function:
+
+```solidity
+function transfer(address recipient, uint256 amount) public returns (bool);
+```
+
+To call this function with recipient 0x123... and amount 1000, we encode the data as follows:
+
+
+```console
+1. Function Selector: a9059cbb // name of the funtion
+
+2. Arguments: Encoded using ABI encoding rules:
+Address: 0000000000000000000000001234567890123456789012345678901234567890
+Uint256: 00000000000000000000000000000000000000000000000000000000000003e8 (1000 in hex)
+```
+
+Final encoded data:
+
+```console
+a9059cbb
+0000000000000000000000001234567890123456789012345678901234567890
+00000000000000000000000000000000000000000000000000000000000003e8
+```
+
+Solidity provides built-in functions for ABI encoding:
+
+
+```solidity
+// abi.encode: Encodes data without adding the function selector.
+abi.encode(uint256(100), address(0x1234567890123456789012345678901234567890))
+```
+
+```solidity
+// abi.encodePacked: Similar to abi.encode, but produces a more compact encoding.
+abi.encodePacked(uint256(100), address(0x1234567890123456789012345678901234567890))
+```
+
+```solidity
+// abi.encodeWithSelector: Encodes data with a given function selector.
+abi.encodeWithSelector(0xa9059cbb, address(0x1234567890123456789012345678901234567890), uint256(1000))
+
+```
+
+
+```solidity
+// abi.encodeWithSignature: Encodes data with a function signature.
+abi.encodeWithSignature("transfer(address,uint256)", address(0x1234567890123456789012345678901234567890))
+```
+
+Example
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract ABIExample {
+
+    function encodeTransfer(address recipient, uint256 amount) public pure returns (bytes memory) {
+        return abi.encodeWithSignature("transfer(address,uint256)", recipient, amount);
+    }
+}
+```
+
+[Try in Remix](#remixLink)
 
 ## Msg.sender and Address(this)
+
+This is very straight forward By now you have seen  msg.sender but lets dive a bit deeper to understand how and when its used in a smart contract 
+
+`msg.sender` global variable has some key features 
+
+`Caller Identification`: Determines who initiated the function call.
+`Access Control`: Often used to restrict functions to specific users.
+`Payments`: Can track who sent Ether to the contract.
+
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract Example {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender; // Set the deployer as the owner
+    }
+
+    function setOwner(address newOwner) public {
+        require(msg.sender == owner, "Only the owner can set a new owner");
+        owner = newOwner;
+    }
+}
+
+```
+
+In this example:
+
+1. The `constructor()` sets the contract deployer as the owner.
+2. The `setOwner()` function allows only the current owner to change the ownership.
+
+
+`address(this)` is a keyword in that represents the address of the current contract. It is used to refer to the contract itself, allowing interactions with its own address and balance.
+
+Key Points:
+1. Contract Address: Represents the contract’s own address.
+2. Self-Interactions: Enables the contract to call its own functions or interact with its own balance.
+3. Ether Balance: Can be used to check the contract's Ether balance.
+
+Examples:
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract Example {
+    // Function to get the contract's address
+    function getContractAddress() public view returns (address) {
+        return address(this);
+    }
+
+    // Function to get the contract's Ether balance
+    function getContractBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+
+
+}
+
+```
+
+
 
