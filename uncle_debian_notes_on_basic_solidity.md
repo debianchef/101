@@ -709,11 +709,33 @@ Imagine you have a magic robot (ethereum virtual Machine in short EVM) that can 
 
 
 `Key Features of Evm` 
-1. Turing-complete: Can execute any computation given enough resources.
-2. Deterministic: Ensures the same inputs produce the same outputs.
-3. Isolated: Each contract runs in isolation, preventing interference between contracts.
 
-Just like programs written in other programming languages, smart contracts  are compiled into bytecode. Bytecode is a low-level, machine-readable representation of the contract that the Ethereum Virtual Machine (EVM) can execute. Since evm  does not directly understand solidity or any other language used to write a contract , it needs to be translated/converted into bytecode by the  compilier.  
+1. **Turing-complete**: Can execute any computation given enough resources.
+
+Most calculators cannot solve a simple BODMAS problem (Bracket, Orders (i.e., powers and square roots, etc.), Division, Multiplication, Addition, Subtraction). 
+
+If we are to solve the equation \(3 + 6 \times (5 + 2) \div 3 - 4\) using BODMAS, the first thing to do is solve the items in the bracket first, followed by Division, Multiplication, Addition, and Subtraction. The computed answer should be \(13\).
+
+A simple calculator might process it as:
+\[3 + 6 \times 5 + 2 \div 3 - 4 = 11.67\]
+
+This ignores the rules of BODMAS. This means only specific types of calculators can solve the equation correctly. If Eve, not the evil one but the mathematician, decides to solve a more complex math problem, she might need another special calculator to solve her problem.
+
+She can choose to use the EVM by writing a smart contract that instructs the EVM to provide the answer with no fear of getting wrong answers since the EVM can follow any mathematical rule to solve her problem.
+
+
+
+2. **Deterministic**: Ensures the same inputs produce the same outputs.
+Think of a chef (probably @debianchef) with a recipe for baking a cake. If you use the same ingredients in the same quantities and follow the same steps every time, you will get the same cake each time. Similarly, in the EVM, if you provide the same inputs to a smart contract, you will always get the same output. This predictability is crucial for ensuring that smart contracts behave consistently and reliably, no matter who executes them or when they are executed
+
+
+3. **Isolated**: Each contract runs in isolation, preventing interference between contracts.
+
+Imagine an Internet Service Provider (ISP) assigning IP addresses to computers. Each computer gets its own unique IP address, ensuring that their internet activities do not interfere with each other. Similarly, in the EVM, each smart contract runs in its own isolated environment, so the actions of one contract do not affect the others. This isolation ensures security and reliability, just like separate IP addresses prevent network conflicts and ensure smooth operation for each computer
+
+
+>[!NOTE] 
+>Just like programs written in other programming languages, smart contracts  are compiled into `bytecode`. `Bytecode` is a `low-level`, machine-readable representation of the contract that the Ethereum Virtual Machine (EVM) can execute. Since evm  does not directly understand solidity or any other language used to write a contract , it needs to be translated/converted into bytecode by the  compilier. 
 
 
 #### Storage
@@ -721,9 +743,9 @@ Think of storage like a big toy box where you keep your toys (data). Putting a t
 
 
 Key Concepts
-1. Storage Slots: Each state variable is stored in a specific slot.[readmore](#storage)
-2. Gas Costs: Writing to storage is expensive, so optimizing storage usage is crucial.[readmore](#storage)
-3. Mappings and Arrays: Common data structures that interact with storage.
+1. **Storage Slots**: Each state variable is stored in a specific slot.[readmore](#storage)
+2. **Gas Costs**: Writing to storage is expensive, so optimizing storage usage is crucial.[readmore](#storage)
+3. **Mappings and Arrays**: Common data structures that interact with storage.
 
 
 >[!IMPORTANT]
