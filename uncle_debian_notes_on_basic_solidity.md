@@ -24,16 +24,15 @@
 13. [Events](#events)
 14. [Inheritance](#inheritance)
 15. [Interfaces](#interfaces)
-16. [Evm, Storage, Opcodes](#evm)
+16. [Understanding Evm, Storage, Opcodes](#evm)
 
 ## Token and Contract Interaction
 17. [ERC20 Tokens](#erc20-tokens)
 18. [ABI Encoding](#abi-encoding)
-19. [Interacting with Other Contracts](#interacting-with-other-contracts)
-20. [msg.sender and address(this)](#msgsender-and-addressthis)
+19. [msg.sender and address(this)](#msgsender-and-addressthis)
 
 ## Pattern
-21. [Checks-effect-interaction pattern](#Checks-effect-interaction)
+20. [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
 
@@ -662,4 +661,17 @@ contract Example is IExample {
 > By using interfaces, you can ensure that your contracts adhere to specific standards, making them easier to interact with and maintain.
 
 
-## Evm, Storage, Opcodes
+## Understanding Evm, Storage, Opcodes
+
+
+
+## ERC20 Tokens
+
+
+## ABI Encoding
+
+
+
+
+## Msg.sender and Address(this)
+
