@@ -322,6 +322,7 @@ contract VisibilityExamples {
     }
 }
 
+// A new contract that inherits the functionality of VisibilityExamples
 contract ShowVisibilityExamples is VisibilityExamples {
 
     function callPublicFunction(uint256 newData) public {
@@ -463,3 +464,202 @@ contract FallbackExample {
 
 The `setOwner()` function expects a parameter of type `address`. If a call is made with `data` that doesn't `match` this expected `signature`, the `fallback` function will be `triggered` if it is `defined` in the contract
 
+
+
+## Block Data (timestamp, number)
+Solidity provides access to certain properties of the blockchain, such as block data.
+Two commonly used block properties are: 
+
+1. `block.timestamp`: This provides the `timestamp` of the current block, which is the approximate time when the block was mined. It is often used for time-based conditions in smart contracts
+Example: 
+```solidity
+    // Function to get the current block timestamp
+    function getCurrentTimestamp() public view returns (uint256) {
+        return block.timestamp;
+    }
+```
+
+
+2. `block.number`: This provides the `number` of the `current block`. It can be used to measure time in `terms` of `block`s rather than `seconds`.
+
+```solidity
+    // Function to get the current block number
+    function getCurrentBlockNumber() public view returns (uint256) {
+        return block.number;
+    }
+```
+
+
+ ## Events
+
+When an `event` is emitted, it creates a log that can be accessed on the blockchain.
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract EventExample {
+
+	  uint256 public data;
+
+// You can declare as many type  and parameter as you want to emit logs 
+    event EventName(  type1       parameter1      type2    parameter2   )
+
+//          |           |             |            |         |
+//          |           |             |            |         |
+//          ↓           ↓             ↓            ↓         ↓
+    event DataChanged(address indexed user,     uint256 newValue);
+
+
+// Index Keyword is declared to filter logs
+  
+
+    // Function to change the data and emit an event
+    function changeData(uint256 newData) public {
+        uint256 oldData = data;
+        data = newData;
+
+		// Call the event and pass the expected parameter to emit logs 
+        emit DataChanged(msg.sender,oldData, newData); // Emit the event
+    }
+}
+
+```
+
+>[!NOTE]
+> Events are a crucial feature in Solidity for logging actions and  they help in track state changes. 
+
+
+
+## Inheritance
+ By now we should be familiar with the keyowrd `is` which is declared  to allows a contract to inherit properties and functions from another contract.
+
+
+ ```solidity
+pragma solidity ^0.8.0;
+
+contract BaseContract {
+    uint256 public data;
+
+   
+// A function to get data
+    function getData() public view virtual returns (uint256) {
+        return data;
+    }
+}
+
+
+// Inherit all properties from BaseContract contract 
+contract DerivedContract is BaseContract {
+   
+ function getDataFromBaseContract() public view returns (uint256) {
+    // Call getData function
+	    return super.getData() 
+		}
+
+}
+
+ ```
+
+
+In case we need to use functionalities of another contract without inheriting its properties , we can use `Composition`.
+
+How It Works
+1. Instance Creation: A contract creates an instance of another contract.
+2. Function Calls: The contract interacts with the instance by calling its functions.
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract BaseContract {
+    uint256 public data;
+
+    // A function to set data
+    function setData(uint256 newData) public {
+        data = newData;
+    }
+
+    // A function to get data
+    function getData() public view virtual returns (uint256) {
+        return data;
+    }
+}
+
+```
+
+```solidity
+pragma solidity ^0.8.0;
+
+import "./BaseContract.sol"; // Import the BaseContract
+
+contract UsingComposition {
+    BaseContract baseContract;
+
+    // Constructor to initialize the instance of BaseContract
+    constructor(address baseContractAddress) {
+        baseContract = BaseContract(baseContractAddress); // Initialize the instance with the deployed contract address
+    }
+
+    // Function to get data from the BaseContract
+    function getDataFromBaseContract() public view returns (uint256) {
+        return baseContract.getData(); // Call getData function from BaseContract
+    }
+
+    // Function to set data in the BaseContract
+    function setDataInBaseContract(uint256 newData) public {
+        baseContract.setData(newData); // Call setData function from BaseContract
+    }
+}
+
+```
+
+In this example above , we will create a contract `UsingComposition` that creates an instance of `BaseContract` and interacts with it.
+ 
+
+
+## Interfaces
+
+Interfaces in Solidity are used to define the functions that a contract must implement without providing the actual implementation.
+
+Key Features
+1. `Function Signature`s: Only function signatures are defined, without any implementation.
+2. `No State Variables`: Interfaces cannot have state variables.
+3. `No Constructors`: Interfaces cannot have constructors.
+4. `No Function Modifiers`: Functions cannot have modifiers like public, internal, etc.
+
+```solidity
+pragma solidity ^0.8.0;
+
+interface IExample {
+    function setDate(uint256 _value) external;
+    function getData() external view returns (uint256);
+}
+
+```
+Implementation
+
+```solidity
+pragma solidity ^0.8.0;
+
+import "./IExample.sol";
+
+contract Example is IExample {
+    uint256 private value;
+
+    // Implement the setValue function
+    function setData(uint256 _value) external override {
+        value = _value;
+    }
+
+    // Implement the getValue function
+    function getData() external view override returns (uint256) {
+        return value;
+    }
+}
+
+```
+
+>[!NOTE]
+> By using interfaces, you can ensure that your contracts adhere to specific standards, making them easier to interact with and maintain.
+
+
+## Evm, Storage, Opcodes
