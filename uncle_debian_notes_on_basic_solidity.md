@@ -420,7 +420,10 @@ Example :
     }
 ```
 
+[Try in Remix](#remixLink)
+
  When calling `receiveEther()`, you can send Ether along with the call
+
 
 
 #### Receive Function
@@ -432,6 +435,7 @@ Example :
 }
   ```
 
+[Try in Remix](#remixLink)
 
 
 #### Fallback Function
@@ -463,6 +467,7 @@ contract FallbackExample {
 
 The `setOwner()` function expects a parameter of type `address`. If a call is made with `data` that doesn't `match` this expected `signature`, the `fallback` function will be `triggered` if it is `defined` in the contract
 
+[Try in Remix](#remixLink)
 
 
 ## Block Data (timestamp, number)
@@ -523,6 +528,8 @@ contract EventExample {
 }
 
 ```
+
+[Try in Remix](#remixLink)
 
 >[!NOTE]
 > Events are a crucial feature in Solidity for logging actions and  they help in track state changes. 
@@ -613,6 +620,7 @@ contract UsingComposition {
 
 In this example above , we will create a contract `UsingComposition` that creates an instance of `BaseContract` and interacts with it.
  
+ [Try in Remix](#remixLink)
 
 
 ## Interfaces
@@ -656,6 +664,7 @@ contract Example is IExample {
 }
 
 ```
+[Try in Remix](#remixLink)
 
 >[!NOTE]
 > By using interfaces, you can ensure that your contracts adhere to specific standards, making them easier to interact with and maintain.
@@ -721,6 +730,7 @@ contract OpcodeExample {
 }
 
 ```
+[Try in Remix](#remixLink)
 
 ## ERC20 Tokens
 ERC20 tokens are a standardized way of creating and managing tokens on the Ethereum blockchain. They provide interoperability, fungibility, and transferability, making them widely used in various decentralized applications and platforms.
@@ -778,6 +788,7 @@ event Approval(address indexed owner, address indexed spender, uint256 value);
 
 In the OpenZeppelin [GitHub repository](#https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)  you can find the standard ERC20 token implementation and other useful contracts
 
+[Try in Remix](#remixLink)
 
 
 ## ABI Encoding
@@ -920,6 +931,11 @@ contract Example {
 ## Checks-effect-interaction pattern
 
 
-## Developing and Deploying Contracts Using Foundry
+
+
+
+## Developing and Deploying Contracts
+
+
 
 [Foundry Tutorials](#foundry)
