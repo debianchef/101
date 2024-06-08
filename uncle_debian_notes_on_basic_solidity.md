@@ -2,9 +2,6 @@
 
 ## Table of Contents
 
-Sure, here's the updated content with the correct numbering and titles formatted with `##`:
-
-
 ## Getting started 
 1. [Variables](#Variables)
 2. [Ethereum Units (Wei, Gwei, Ether)](#ethereum-units-wei-gwei-ether)
