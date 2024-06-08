@@ -14,7 +14,7 @@
 
 
 ## Types of Functions
-6. [Public , External , View , Pure](#functions)
+6. [ Public , External , Internal , Private Pure and View](#functions)
 7. [Constructor ](#constructor-functions)
 8. [Payable Functions](#payable-functions)
 9. [Receive Function](#receive-function)
@@ -163,7 +163,6 @@ uint256 myUint256 = 12345678901234567890;
 >Solidity reserves `256 bits` of storage regardless of the uint size
 
 
-
 8. `Boolean`
 
 A boolean is a value type that directly stores the true or false value within the variable `itself`.
@@ -271,16 +270,90 @@ Solidity supports all the necessary loops just in other programming language.
 [Try in Remix](#remixLink)
 
 
-#### Public , External , Pure and View
+#### Public , External , Internal , Private Pure and View
+In Solidity, a `function` is defined using the function keyword followed by the function name, parameters (if any), visibility specifier, and the function body.
+
+```solidity
+
+function functionName(parameters) visibility returns (returnType) {//function body}
+
+//          |           |             |                   |             |
+//          |           |             |                   |             |
+function Myfunction(uint anyname)    public  returns   (uint)    { return anyname;}
+```
+
+ Here's an example of defining functions with different visibility keywords in Solidity:
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract VisibilityExamples {
+    uint256 public data;
+
+  
+    // Public function: Can be called internally, externally, and by derived contracts
+    function setDataPublic(uint256 newData) public {
+        data = newData;
+    }
+
+    // External function: Can only be called externally
+    function setDataExternal(uint256 newData) external {
+        data = newData;
+    }
+
+    // Internal function: Can be called internally and by derived contracts
+    function _setDataInternal(uint256 newData) internal {
+        data = newData;
+    }
+
+    // Private function: Can only be called within this contract
+    function _setDataPrivate(uint256 newData) private {
+        data = newData;
+    }
+
+    // Pure function: Does not read or modify state
+    function pureFunction(uint256 a, uint256 b) public pure returns (uint256) {
+        return a + b;
+    }
+
+    // View function: Reads state but does not modify it
+    function viewFunction() public view returns (uint256) {
+        return data;
+    }
+}
+
+contract ShowVisibilityExamples is VisibilityExamples {
+
+    function callPublicFunction(uint256 newData) public {
+        setDataPublic(newData); // Allowed: public function
+    }
+
+
+    function callInternalFunction(uint256 newData) public {
+        _setDataInternal(newData); // Allowed: internal function
+    }
+
+
+
+     function callPrivateFunction(uint256 newData) public {
+        _setDataPrivate(newData); // Not allowed: private function
+     }
+}
+
+```
 
 
 
 `Exercise`:
 [Try in Remix](#remixLink)
 
+
+>[!NOTE]
+>The `is` keyword is used to denote inheritance. For example, `contract DerivedContract is ShowVisibilityExamples` means that `ShowVisibilityExamples` contract  inherits all the properties and functions of the `VisibilityExamples` contract. This allows `ShowVisibilityExamples` contract to use and extend the functionality defined in VisibilityExamples, promoting code reuse and organization
+
 #### Constructor
 
-A constructor is a special function in a smart contract that runs once when the contract is deployed. It initializes the contract's state and sets up variables or settings needed from the start.
+A constructor is a special function in a smart contract that runs once when the contract is deployed. It initializes the contract's state and sets up variables or settings needed from the start. 
 
 ```solidity
 pragma solidity ^0.8.0;
