@@ -928,11 +928,81 @@ contract Example {
 ```
 
 
-## Checks-effect-interaction pattern
+## Checks-effect-Interaction pattern
+When it comes to writing smart contracts there is a secure pattern to follow. The `Checks-Effects-Interactions` pattern is a best practice in Solidity development that helps prevent reentrancy attacks and ensures safe smart contract interactions. This pattern involves three steps executed in a specific order:
+
+1. Checks: Validate all conditions and inputs at the beginning of the function.
+2. Effects: Update the contract’s state variables.
+3. Interactions: Interact with external contracts and transfer funds.
+
+#### Why Use This Pattern?
+
+1. Prevent [Reentrancy](#reentrancy) Attacks: By updating the contract’s state before making external calls, it mitigates the risk of reentrancy attacks, where an attacker could exploit the external call to repeatedly re-enter the function and manipulate state.
+
+2. Ensure Safety: It ensures that the contract’s state is updated correctly before any external interactions, reducing the risk of unexpected behaviors or bugs.
 
 
+#### 1. Negative Example (Not Using Checks-Effects-Interactions)
+```solidity 
+
+    // Unsafe withdrawal function without using Checks-Effects-Interactions pattern
+    function withdraw(uint256 amount) public {
+        // Interactions
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer failed");
+
+        // Checks
+        require(balances[msg.sender] >= amount, "Insufficient balance");
+
+        // Effects
+        balances[msg.sender] -= amount;
+    }
+
+ 
+
+```
+Explanation:
+
+`Interactions`: Transfers Ether to the user before updating the state.
+`Checks`: Verifies the user has enough balance after the transfer.
+`Effects`: Updates the user's balance after the external interaction.
 
 
+This pattern is vulnerable to [reentrancy](#reentrancy) attacks because the state is not updated before making an external call. An attacker could exploit this by repeatedly calling the withdraw function before the balance is updated, draining the contract.
+
+
+#### 2. Positive Example (Using Checks-Effects-Interactions)
+
+```solidity
+
+    // Safe withdrawal function using Checks-Effects-Interactions pattern
+    function withdraw(uint256 amount) public {
+        // Checks
+        require(balances[msg.sender] >= amount, "Insufficient balance");
+
+        // Effects
+        balances[msg.sender] -= amount;
+
+        // Interactions
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer failed");
+    }
+
+
+```
+
+Explanation:
+
+`Checks`: Ensures the user has enough balance to withdraw.
+`Effects`: Updates the user's balance before interacting with external contracts.
+`Interactions`: Transfers Ether to the user after updating the state.
+
+
+>[!IMPORTANT]
+>This pattern helps prevent reentrancy attacks by ensuring the state is correctly updated before any external interaction
+
+
+By adhering to the Checks-Effects-Interactions pattern, you can write more secure and robust smart contracts
 
 ## Developing and Deploying Contracts
 
