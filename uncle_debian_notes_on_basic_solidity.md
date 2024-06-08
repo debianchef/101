@@ -440,7 +440,7 @@ Example :
 
 
 #### Receive Function
- This special function that can be implemented in a contract to handle plain Ether transfers sent to the contract without any data. The receive function is defined using the `receive` keyword and must be marked `payable`
+ This special function that can be implemented in a contract to handle plain Ether transfers sent to the contract without any `data`. The `receive()` function is defined using the `receive` keyword and `must` be marked `payable`
 
  ```solidity
  receive() external payable {
@@ -448,12 +448,13 @@ Example :
 }
   ```
 
-[Try in Remix](#remixLink)
 
 
 #### Fallback Function
 
-When a function call is made to a contract, the data part of the call specifies which function to execute. If the call data does not match any function signature in the contract, the fallback function is triggered if it is defined
+When a function `call` is made to a `contract`, the `data` part of the `call` specifies which `function` to `execute`. If the call `data` does not `match` any function `signature` in the contract, the `fallback` function is `triggered` if it is `defined`.
+
+To get a clear picture of what is happening , lets assume  Bob built a box  to contain only red apples . Eve , the evil one decides to put green apples in the box . But bob is a clever one , he designed the box to handle a situation where someone might introduce a different color .   
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -478,16 +479,18 @@ contract FallbackExample {
 }
 ```
 
-The `setOwner()` function expects a parameter of type `address`. If a call is made with `data` that doesn't `match` this expected `signature`, the `fallback` function will be `triggered` if it is `defined` in the contract
+The `setOwner()` function expects a `parameter` of type `address`. If a call is made with `data` that doesn't `match` the expected `signature`, the `fallback` function will be `triggered` if it is `defined` in the contract
 
 [Try in Remix](#remixLink)
 
 
 ## Block Data (timestamp, number)
-Solidity provides access to certain properties of the blockchain, such as block data.
+Solidity provides access to certain properties of the blockchain, such as `block data`.
 Two commonly used block properties are: 
 
-1. `block.timestamp`: This provides the `timestamp` of the current block, which is the approximate time when the block was mined. It is often used for time-based conditions in smart contracts
+1. `block.timestamp`: This provides the `timestamp` of the current block, which is the approximate time when the block was mined. It is often used for `time-based` conditions in smart contracts.
+
+
 Example: 
 ```solidity
     // Function to get the current block timestamp
@@ -509,7 +512,7 @@ Example:
 
  ## Events
 
-When an `event` is emitted, it creates a log that can be accessed on the blockchain.
+When an `event` is `emitted`, it creates a log that can be `accessed` on the blockchain.
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -525,8 +528,6 @@ contract EventExample {
 //          |           |             |            |         |
 //          ↓           ↓             ↓            ↓         ↓
     event DataChanged(address indexed user,     uint256 newValue);
-
-
 // Index Keyword is declared to filter logs
   
 
@@ -536,7 +537,10 @@ contract EventExample {
         data = newData;
 
 		// Call the event and pass the expected parameter to emit logs 
-        emit DataChanged(msg.sender,oldData, newData); // Emit the event
+        emit DataChanged(msg.sender,oldData, newData); // Emit the event by declaring emit keyword followed by the event name
+		                                               // and specified parameters passed to it just as you can see
+        
+       
     }
 }
 
@@ -545,7 +549,7 @@ contract EventExample {
 [Try in Remix](#remixLink)
 
 >[!NOTE]
-> Events are a crucial feature in Solidity for logging actions and  they help in track state changes. 
+> `Events` are a crucial feature in Solidity for logging actions and  they help in track state changes. 
 
 
 
@@ -583,8 +587,15 @@ contract DerivedContract is BaseContract {
 In case we need to use functionalities of another contract without inheriting its properties , we can use `Composition`.
 
 How It Works
-1. Instance Creation: A contract creates an instance of another contract.
-2. Function Calls: The contract interacts with the instance by calling its functions.
+1. Instance Creation: A contract creates an instance of another contract. We can create an instance of a contract in another contract
+by importing and declaring it and giving it a new name . 
+2. Function Calls: The contract interacts with the instance by calling its functions. Functions can be called using the name of the 
+instantiated contract with the function we want to use . 
+
+If the contract name is BaseContract and we want to use composition , we will do as follows ;
+
+
+
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -611,6 +622,7 @@ pragma solidity ^0.8.0;
 import "./BaseContract.sol"; // Import the BaseContract
 
 contract UsingComposition {
+	// This is How to use composition to instatiate an imported contract.
     BaseContract baseContract;
 
     // Constructor to initialize the instance of BaseContract
@@ -620,6 +632,8 @@ contract UsingComposition {
 
     // Function to get data from the BaseContract
     function getDataFromBaseContract() public view returns (uint256) {
+		// This is how to call function in the BaseContract contract by using 
+		// the new name of the contract along with the name of the function you want  to call.
         return baseContract.getData(); // Call getData function from BaseContract
     }
 
@@ -631,21 +645,25 @@ contract UsingComposition {
 
 ```
 
-In this example above , we will create a contract `UsingComposition` that creates an instance of `BaseContract` and interacts with it.
+In the example above , we  created a contract `UsingComposition` that creates an instance of `BaseContract` to call its  functions .
  
  [Try in Remix](#remixLink)
 
 
 ## Interfaces
 
-Interfaces in Solidity are used to define the functions that a contract must implement without providing the actual implementation.
+Interfaces in Solidity are used to define the functions that a contract `must` implement `without` providing the actual `implementation`.
 
-Key Features
-1. `Function Signature`s: Only function signatures are defined, without any implementation.
+They are called interfaces becuase they define a structure and posseses the features :
+
+1. `Function Signatures`: Only function signatures are defined, without any implementation.
 2. `No State Variables`: Interfaces cannot have state variables.
 3. `No Constructors`: Interfaces cannot have constructors.
 4. `No Function Modifiers`: Functions cannot have modifiers like public, internal, etc.
 
+Interface contracts are declared with the keyword `interface` instead of the usual `contract` keyword
+
+Example :
 ```solidity
 pragma solidity ^0.8.0;
 
@@ -655,7 +673,7 @@ interface IExample {
 }
 
 ```
-Implementation
+How to Implement :
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -677,6 +695,8 @@ contract Example is IExample {
 }
 
 ```
+
+
 [Try in Remix](#remixLink)
 
 >[!NOTE]
@@ -684,7 +704,7 @@ contract Example is IExample {
 
 
 ## Understanding Evm, Storage, Opcodes
-#### Evm
+#### Evm (The Ethereum Virtual Machine)
 Imagine you have a magic robot (ethereum virtual Machine in short EVM) that can follow special instructions (smart contracts) to do tasks. This robot always does the tasks in the same way, so everyone watching the robot agrees on what it did, no matter where they are
 
 
