@@ -38,6 +38,8 @@
 20. [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
+Smart contracts can be developed in your browser using [remix-ide](#remix) or locally using your favourite ide and [foundry](#foundry). I will recommend the reader to watch [this youtube](youthttps://youtu.be/vH8T3In6ZkEube) tutorial on remix Ide to see how we can use it to deploy contracts. This is because we will be using it to practice  most of our  examples  as we dive deep. I will also recommend to pause the video and practice the usage.  I will also  discuss how to deploy locally using [foundry] 
+
 
 #### Variables
 Solidity supports a variety of data types including:
