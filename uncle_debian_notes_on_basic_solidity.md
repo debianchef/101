@@ -733,50 +733,46 @@ ERC20 tokens must implement the following functions:
 ```solidity
 // Total Supply: Returns the total supply of tokens.
 function totalSupply() public view returns (uint256);
-```
 
-```solidity
+
+
 //Balance Of: Returns the token balance of a specific address.
 function balanceOf(address account) public view returns (uint256);
-```
 
-```solidity
+
+
 // Transfer: Transfers a certain amount of tokens to a specific address.
 function transfer(address recipient, uint256 amount) public returns (bool);
 
-```
 
-```solidity
 
 //Allowance: Returns the remaining number of tokens that a spender is allowed to spend on behalf of the owner.
-
 function allowance(address owner, address spender) public view returns (uint256);
-```
 
-```solidity
+
+
 //Approve: Allows a spender to spend a certain amount of the owner’s tokens.
 
 function approve(address spender, uint256 amount) public returns (bool);
-```
 
-```solidity
+
 //Transfer From: Transfers tokens from one address to another using the allowance mechanism.
 function transferFrom(address sender, address recipient, uint256 amount) public returns (bool);
 ```
 
+
 ERC20 Events
+
 ERC20 tokens must emit the following events:
 
 
 
 ```solidity
-//Approval: Emitted when the allowance of a spender for an owner is set by a call to approve.
+//Transfer: Emitted when  you  transfer a certain amount of tokens to a specific address.
 event Transfer(address indexed from, address indexed to, uint256 value);
 
-```
 
-
-```solidity
+//Approval: Emitted when the allowance of a spender for an owner is set by a call to approve.
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
@@ -824,25 +820,20 @@ a9059cbb
 
 Solidity provides built-in functions for ABI encoding:
 
-
 ```solidity
 // abi.encode: Encodes data without adding the function selector.
 abi.encode(uint256(100), address(0x1234567890123456789012345678901234567890))
-```
 
-```solidity
+
+
 // abi.encodePacked: Similar to abi.encode, but produces a more compact encoding.
 abi.encodePacked(uint256(100), address(0x1234567890123456789012345678901234567890))
-```
 
-```solidity
+
 // abi.encodeWithSelector: Encodes data with a given function selector.
 abi.encodeWithSelector(0xa9059cbb, address(0x1234567890123456789012345678901234567890), uint256(1000))
 
-```
 
-
-```solidity
 // abi.encodeWithSignature: Encodes data with a function signature.
 abi.encodeWithSignature("transfer(address,uint256)", address(0x1234567890123456789012345678901234567890))
 ```
@@ -926,4 +917,9 @@ contract Example {
 ```
 
 
+## Checks-effect-interaction pattern
 
+
+## Developing and Deploying Contracts Using Foundry
+
+[Foundry Tutorials](#foundry)
