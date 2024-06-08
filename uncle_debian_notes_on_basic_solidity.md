@@ -38,7 +38,7 @@
 20. [Checks-effect-interaction pattern](#Checks-effect-interaction)
 
 
-Smart contracts solidity file extention ends with `.sol` just as javascript has `.js`  (e.g  `Mycontract.sol`) and  can be developed in your browser using [remix-ide](#remix) or locally using your favourite ide and [foundry](#foundry). I will recommend you  watch [this video](youthttps://youtu.be/vH8T3In6ZkEube) tutorial on remix Ide to see how we can use it to deploy contracts. This is because we will be using it to practice  most of our  examples  as we dive deep. I will also recommend to pause the video and practice the usage.  I will also  discuss how to deploy locally using [foundry](#).
+Smart contracts solidity file extention ends with `.sol` just as javascript has `.js`  (e.g  `Mycontract.sol`) and  can be developed in your browser using [remix-ide](#remix) or locally using your favourite ide and [foundry](#foundry). I will recommend you  watch [this video](https://youtu.be/vH8T3In6ZkEube) tutorial on remix Ide to see how we can use it to deploy contracts. This is because we will be using it to practice  most of our  examples  as we dive deep. I will also recommend to pause the video and practice the usage.  I will also  discuss how to deploy locally using [foundry](#).
 
 Lets get Started :
 
